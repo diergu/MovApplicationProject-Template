@@ -46,7 +46,34 @@ A proposta prioriza doações de itens físicos de necessidade imediata, como ro
 
 O donatário abre o aplicativo, realiza seu cadastro, autentica-se e registra os itens de que necessita, incluindo informações como descrição, categoria, quantidade, prioridade e recorrência. Quando a localização for necessária, o aplicativo deverá solicitar a autorização do usuário. A necessidade passa a ser exibida para que doadores possam encontrá-la por pesquisa, filtros de categoria e localização ou marcadores no mapa. O responsável pode editar ou cancelar a publicação e acompanhar sua situação pelo celular.
 
-Esse fluxo centraliza as demandas e melhora sua visibilidade. O repositório de origem apresenta um fluxo de navegação da interface, mas não fornece um diagrama formal em BPMN para este processo.
+Esse fluxo centraliza as demandas e melhora sua visibilidade. O diagrama abaixo adapta ao Bem Próximo a estrutura de processo apresentada na imagem de referência, representando as ações do donatário e as respostas do aplicativo móvel.
+
+```mermaid
+flowchart LR
+    inicio((Início)) --> acesso[Realizar cadastro ou autenticação]
+    acesso --> cadastro[Cadastrar uma necessidade]
+    cadastro --> dados[Informar descrição, categoria, quantidade, prioridade e recorrência]
+    dados --> usarLocalizacao{Deseja informar a localização?}
+
+    usarLocalizacao -->|Sim| permissao[Aplicativo solicita autorização de localização]
+    permissao --> autorizado{Acesso autorizado?}
+    autorizado -->|Sim| vincular[Vincular localização à necessidade]
+    autorizado -->|Não| publicar[Publicar sem a localização atual]
+    usarLocalizacao -->|Não| publicar
+    vincular --> publicarComLocalizacao[Publicar com localização]
+
+    publicar --> busca[Disponibilizar em pesquisas e filtros]
+    publicarComLocalizacao --> busca
+    publicarComLocalizacao --> mapa[Exibir marcador no mapa]
+    busca --> acompanhar[Acompanhar a situação da publicação]
+    mapa --> acompanhar
+    acompanhar --> gerenciar{Manter a publicação ativa?}
+    gerenciar -->|Editar| cadastro
+    gerenciar -->|Sim| acompanhar
+    gerenciar -->|Cancelar| fim((Fim))
+```
+
+O uso da localização permanece opcional: sem autorização, a necessidade ainda pode ser publicada e encontrada por pesquisa e filtros, mas não utiliza a localização atual do aparelho para aparecer no mapa.
 
 ### Processo 2 – Localização e realização da doação
 
