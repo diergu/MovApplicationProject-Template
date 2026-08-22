@@ -303,8 +303,8 @@ Os integrantes e papéis informados para o projeto são:
 | Papel | Responsáveis |
 |-------|--------------|
 | Scrum Masters | Anna Rodrigues; Helena Bretas |
-| Equipe de Desenvolvimento | Diego Alencar; Arthur Vieira; Rodrigo Galvão; Vitor Fernandes; Helena Bretas; Anna Rodrigues |
-| Equipe de Design | Diego Alencar; Arthur Vieira; Rodrigo Galvão; Vitor Fernandes; Helena Bretas; Anna Rodrigues |
+| Equipe de Desenvolvimento | Anna Rodrigues; Arthur Vieira; Diego Alencar; Helena Bretas; Rodrigo Galvão; Vitor Fernandes |
+| Equipe de Design | Anna Rodrigues; Arthur Vieira; Diego Alencar; Helena Bretas; Rodrigo Galvão; Vitor Fernandes |
 
 ## Gestão de Orçamento
 
