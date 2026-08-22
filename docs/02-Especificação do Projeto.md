@@ -147,7 +147,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 O diagrama apresenta uma visão resumida das principais funcionalidades do aplicativo. O detalhamento por tipo de usuário e requisito permanece na tabela de cobertura abaixo.
 
 ```mermaid
-%%{init: {"flowchart": {"curve": "linear"}} }%%
+%%{init: {"flowchart": {"curve": "linear", "nodeSpacing": 80, "rankSpacing": 100, "padding": 20}, "themeVariables": {"fontSize": "18px"}} }%%
 flowchart LR
     usuario[Usuário] --> conta((Cadastrar e gerenciar conta))
     conta --> publicacoes((Publicar necessidades, campanhas ou ofertas))
