@@ -149,9 +149,12 @@ O diagrama agrupa funcionalidades relacionadas para apresentar, de forma resumid
 ```mermaid
 %%{init: {"flowchart": {"curve": "linear"}} }%%
 flowchart LR
-    U[Usuário]
-    D[Doador]
-    N[Donatário]
+    subgraph ATORES[Atores]
+        direction TB
+        U[Usuário]
+        D[Doador]
+        N[Donatário]
+    end
 
     D -.->|especialização| U
     N -.->|especialização| U
