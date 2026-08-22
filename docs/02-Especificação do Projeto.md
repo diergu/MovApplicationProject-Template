@@ -298,14 +298,13 @@ As tarefas também são classificadas pelas categorias Bug, Desenvolvimento, Doc
 
 ## Gerenciamento de Equipe
 
-Os papéis informados na documentação de origem são:
+Os integrantes e papéis informados para o projeto são:
 
 | Papel | Responsáveis |
 |-------|--------------|
-| Scrum Master | Helena Bretas |
-| Product Owner | Johnata de Souza do Amparo |
-| Equipe de Desenvolvimento | Elizabeth França Vaz dos Santos; Geovana Vitória Andrade Silva; Gildney Chaves Neto; Helena Bretas; Johnata de Souza do Amparo |
-| Equipe de Design | Elizabeth França Vaz dos Santos; Geovana Vitória Andrade Silva; Gildney Chaves Neto |
+| Scrum Masters | Anna Rodrigues; Helena Bretas |
+| Equipe de Desenvolvimento | Diego Alencar; Arthur Vieira; Rodrigo Galvão; Vitor Fernandes; Helena Bretas; Anna Rodrigues |
+| Equipe de Design | Diego Alencar; Arthur Vieira; Rodrigo Galvão; Vitor Fernandes; Helena Bretas; Anna Rodrigues |
 
 ## Gestão de Orçamento
 
