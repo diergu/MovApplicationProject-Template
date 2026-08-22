@@ -127,42 +127,86 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Diagrama de Casos de Uso
 
-Os casos de uso abaixo são derivados das histórias e dos requisitos consolidados e representam as principais interações pelo aplicativo móvel.
+Os casos de uso abaixo são derivados das histórias e dos requisitos consolidados e representam as principais interações pelo aplicativo móvel. Doador e donatário são especializações do ator usuário e, portanto, compartilham os casos de uso associados a ele.
 
 ```mermaid
 flowchart LR
+    U[Usuário]
     D[Doador]
     N[Donatário]
-    U[Usuário]
 
-    UC1((Cadastrar e autenticar))
-    UC2((Gerenciar conta))
-    UC3((Registrar oferta))
-    UC4((Registrar necessidade ou campanha))
-    UC5((Pesquisar e filtrar))
-    UC6((Autorizar localização e consultar mapa))
-    UC7((Conversar por chat))
-    UC8((Confirmar e acompanhar doação))
-    UC9((Consultar histórico))
-    UC10((Avaliar ou reportar))
+    D -.->|especialização| U
+    N -.->|especialização| U
 
-    D --> UC1
-    D --> UC2
-    D --> UC3
-    D --> UC5
-    D --> UC6
-    D --> UC7
-    D --> UC8
-    D --> UC9
-    N --> UC1
-    N --> UC2
-    N --> UC4
-    N --> UC5
-    N --> UC7
-    N --> UC8
-    N --> UC9
+    subgraph APP[Aplicativo Bem Próximo]
+        UC01((Cadastrar conta))
+        UC02((Confirmar conta por e-mail e autenticar))
+        UC03((Gerenciar conta))
+        UC04((Registrar necessidade))
+        UC05((Registrar oferta))
+        UC06((Criar campanha de arrecadação))
+        UC07((Editar ou cancelar publicação própria))
+        UC08((Consultar detalhes de solicitação ou oferta))
+        UC09((Visualizar solicitações, campanhas, ofertas e instituições))
+        UC10((Pesquisar, filtrar e ordenar))
+        UC11((Consultar mapa e proximidade))
+        UC12((Conversar por chat ou mensagem))
+        UC13((Confirmar doação e atualizar status))
+        UC14((Acompanhar status))
+        UC15((Consultar histórico))
+        UC16((Reportar irregularidade))
+        UC17((Avaliar doação ou instituição))
+        UC18((Autorizar uso da localização))
+    end
+
+    U --> UC01
+    U --> UC02
+    U --> UC03
+    U --> UC08
+    U --> UC09
     U --> UC10
+    U --> UC11
+    U --> UC12
+    U --> UC13
+    U --> UC14
+    U --> UC15
+    U --> UC16
+    U --> UC17
+
+    D --> UC05
+    D --> UC07
+
+    N --> UC04
+    N --> UC06
+    N --> UC07
+
+    UC10 -.->|&lt;&lt;include&gt;&gt;| UC09
+    UC18 -.->|&lt;&lt;extend&gt;&gt;| UC11
 ```
+
+### Cobertura dos casos de uso
+
+| Requisito | Caso de uso | Ator principal |
+|-----------|-------------|----------------|
+| RF-01 | Cadastrar conta | Usuário |
+| RF-02 | Confirmar conta por e-mail e autenticar | Usuário |
+| RF-03 | Gerenciar conta | Usuário |
+| RF-04 | Registrar necessidade | Donatário |
+| RF-05 | Registrar oferta | Doador |
+| RF-06 | Criar campanha de arrecadação | Donatário |
+| RF-07 | Editar ou cancelar publicação própria | Doador ou donatário |
+| RF-08 | Consultar detalhes de solicitação ou oferta | Usuário |
+| RF-09 | Visualizar solicitações, campanhas, ofertas e instituições | Usuário |
+| RF-10 | Pesquisar, filtrar e ordenar | Usuário |
+| RF-11 | Consultar mapa e proximidade | Usuário |
+| RF-12 | Conversar por chat ou mensagem | Doador ou donatário |
+| RF-13 | Confirmar doação e atualizar status | Doador ou donatário |
+| RF-14 | Acompanhar status | Usuário |
+| RF-15 | Consultar histórico | Usuário |
+| RF-16 | Reportar irregularidade | Usuário |
+| RF-17 | Avaliar doação ou instituição | Usuário |
+
+O caso auxiliar “Autorizar uso da localização” representa a permissão exigida pelo RNF-10 e estende a consulta ao mapa quando o usuário opta por utilizar sua localização atual. Os demais requisitos não funcionais são condições de qualidade transversais e não aparecem como objetivos independentes dos atores.
 
 # Matriz de Rastreabilidade
 
