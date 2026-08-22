@@ -32,82 +32,42 @@ O projeto de origem define quatro perfis de usuários. Como não foram fornecido
 
 ### Análise da Situação Atual
 
-Atualmente, as informações sobre instituições e pessoas que necessitam de doações estão dispersas e nem sempre são facilmente verificáveis. Potenciais doadores encontram dificuldade para localizar organizações confiáveis, identificar necessidades atualizadas e descobrir opções próximas. Ao mesmo tempo, ONGs, instituições de caridade, grupos religiosos e bancos de alimentos possuem alcance limitado para divulgar suas demandas.
-
-Sem um aplicativo centralizado, o processo depende da procura individual em redes sociais, páginas e grupos de mensagens, seguida por contatos realizados separadamente. Essa fragmentação reduz o alcance das campanhas, dificulta a correspondência entre oferta e necessidade e pode fazer com que itens úteis permaneçam parados ou sejam desperdiçados. Também impede que o usuário aproveite recursos comuns do celular, como localização, mapas e acesso imediato durante o deslocamento.
+As informações sobre necessidades e doações estão dispersas em redes sociais, páginas e grupos de mensagens. Isso dificulta a localização de instituições, reduz o alcance das campanhas e torna mais demorado o contato entre doadores e donatários.
 
 ### Descrição Geral da Proposta
 
-O Bem Próximo será um aplicativo móvel para Android e iOS destinado a aproximar doadores de organizações sociais e pessoas que necessitam de itens. O aplicativo permitirá divulgar necessidades, encontrar solicitações e instituições por tipo de item e localização, visualizar pontos em mapa e estabelecer contato direto entre as partes.
-
-A proposta prioriza doações de itens físicos de necessidade imediata, como roupas, alimentos, brinquedos e materiais escolares. A experiência será adaptada a telas móveis e solicitará autorização antes de acessar a localização do usuário. O projeto busca ampliar a visibilidade das organizações, reduzir o desperdício de itens reutilizáveis e tornar o processo de doação mais simples, transparente e acessível. Recursos de acompanhamento, histórico, avaliação e reporte de irregularidades apoiarão a confiança entre os participantes.
+O Bem Próximo será um aplicativo móvel para Android e iOS que conectará doadores e donatários. Pelo aplicativo, será possível divulgar necessidades, localizar oportunidades de doação, visualizar opções no mapa e entrar em contato com os responsáveis. O acesso à localização dependerá da autorização do usuário.
 
 ### Processo 1 – Registro e divulgação de necessidades
 
-O donatário abre o aplicativo, realiza seu cadastro, autentica-se e registra os itens de que necessita, incluindo informações como descrição, categoria, quantidade, prioridade e recorrência. Quando a localização for necessária, o aplicativo deverá solicitar a autorização do usuário. A necessidade passa a ser exibida para que doadores possam encontrá-la por pesquisa, filtros de categoria e localização ou marcadores no mapa. O responsável pode editar ou cancelar a publicação e acompanhar sua situação pelo celular.
-
-Esse fluxo centraliza as demandas e melhora sua visibilidade. O diagrama abaixo adapta ao Bem Próximo a estrutura de processo apresentada na imagem de referência, representando as ações do donatário e as respostas do aplicativo móvel.
+O donatário entra no aplicativo, registra uma necessidade e decide se deseja informar sua localização. Em seguida, publica e acompanha a solicitação, podendo editá-la ou cancelá-la.
 
 ```mermaid
-flowchart LR
-    inicio((Início)) --> acesso[Realizar cadastro ou autenticação]
-    acesso --> cadastro[Cadastrar uma necessidade]
-    cadastro --> dados[Informar descrição, categoria, quantidade, prioridade e recorrência]
-    dados --> usarLocalizacao{Deseja informar a localização?}
-
-    usarLocalizacao -->|Sim| permissao[Aplicativo solicita autorização de localização]
-    permissao --> autorizado{Acesso autorizado?}
-    autorizado -->|Sim| vincular[Vincular localização à necessidade]
-    autorizado -->|Não| publicar[Publicar sem a localização atual]
-    usarLocalizacao -->|Não| publicar
-    vincular --> publicarComLocalizacao[Publicar com localização]
-
-    publicar --> busca[Disponibilizar em pesquisas e filtros]
-    publicarComLocalizacao --> busca
-    publicarComLocalizacao --> mapa[Exibir marcador no mapa]
-    busca --> acompanhar[Acompanhar a situação da publicação]
-    mapa --> acompanhar
-    acompanhar --> gerenciar{Manter a publicação ativa?}
-    gerenciar -->|Editar| cadastro
-    gerenciar -->|Sim| acompanhar
-    gerenciar -->|Cancelar| fim((Fim))
+flowchart TD
+    inicio((Início)) --> acesso[Entrar ou cadastrar-se]
+    acesso --> cadastro[Registrar necessidade]
+    cadastro --> localizacao{Usar localização?}
+    localizacao -->|Sim| autorizar[Autorizar localização]
+    localizacao -->|Não| publicar[Publicar necessidade]
+    autorizar --> publicar
+    publicar --> acompanhar[Acompanhar, editar ou cancelar]
+    acompanhar --> fim((Fim))
 ```
-
-O uso da localização permanece opcional: sem autorização, a necessidade ainda pode ser publicada e encontrada por pesquisa e filtros, mas não utiliza a localização atual do aparelho para aparecer no mapa.
 
 ### Processo 2 – Localização e realização da doação
 
-O doador acessa o aplicativo e consulta as solicitações, campanhas, ofertas ou instituições disponíveis. Após autorizar o uso da localização, quando desejar, poderá pesquisar, aplicar filtros e visualizar opções próximas no mapa. Em seguida, consulta os detalhes e entra em contato com o donatário por chat ou mensagem para combinar disponibilidade, retirada ou entrega. Ao final, a doação pode ser confirmada, acompanhada pelo status, registrada no histórico e avaliada pelos participantes.
-
-Esse fluxo reduz a busca manual por instituições, facilita o contato entre as partes e mantém um registro das doações. O diagrama abaixo adapta ao Bem Próximo a estrutura de processo apresentada na imagem de referência, incluindo decisões do doador e atividades que podem ser combinadas entre os participantes.
+O doador consulta as oportunidades, utiliza pesquisa, filtros ou mapa e entra em contato com o donatário. As partes combinam a entrega ou retirada, confirmam a doação e podem registrar uma avaliação.
 
 ```mermaid
-flowchart LR
-    inicio2((Início)) --> consultar[Consultar solicitações, campanhas, ofertas ou instituições]
-    consultar --> usarLocalizacao2{Deseja usar a localização atual?}
-
-    usarLocalizacao2 -->|Sim| solicitarPermissao[Aplicativo solicita autorização de localização]
-    solicitarPermissao --> localAutorizado{Acesso autorizado?}
-    localAutorizado -->|Sim| resultadosProximos[Exibir opções próximas e marcadores no mapa]
-    localAutorizado -->|Não| pesquisar[Pesquisar, filtrar e ordenar resultados]
-    usarLocalizacao2 -->|Não| pesquisar
-    resultadosProximos --> pesquisar
-
-    pesquisar --> detalhes[Consultar os detalhes da opção selecionada]
-    detalhes --> interesse{Deseja prosseguir com a doação?}
-    interesse -->|Não| consultar
-    interesse -->|Sim| contato[Entrar em contato por chat ou mensagem]
-    contato --> combinarDisponibilidade[Confirmar disponibilidade dos itens]
-    contato --> combinarEntrega[Combinar retirada ou entrega]
-    combinarDisponibilidade --> realizar[Realizar a doação]
-    combinarEntrega --> realizar
-    realizar --> confirmar[Confirmar a conclusão e atualizar o status]
-    confirmar --> historico[Registrar a doação no histórico]
-    historico --> avaliar[Avaliar a experiência]
-    avaliar --> fim2((Fim))
+flowchart TD
+    inicio2((Início)) --> consultar[Consultar oportunidades]
+    consultar --> pesquisar[Pesquisar, filtrar ou usar o mapa]
+    pesquisar --> contato[Entrar em contato]
+    contato --> combinar[Combinar retirada ou entrega]
+    combinar --> confirmar[Confirmar a doação]
+    confirmar --> historico[Registrar no histórico e avaliar]
+    historico --> fim2((Fim))
 ```
-
-O uso da geolocalização permanece opcional. Caso o usuário não conceda a autorização, ele ainda pode localizar oportunidades por pesquisa, filtros e ordenação, sem utilizar a posição atual do aparelho.
 
 ## Indicadores de Desempenho
 
