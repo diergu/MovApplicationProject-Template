@@ -144,39 +144,17 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Diagrama de Casos de Uso
 
-O diagrama agrupa funcionalidades relacionadas para apresentar, de forma resumida, as principais interações com o aplicativo móvel. Doador e donatário são especializações do ator usuário e compartilham os casos de uso gerais.
+O diagrama apresenta uma visão resumida das principais funcionalidades do aplicativo. O detalhamento por tipo de usuário e requisito permanece na tabela de cobertura abaixo.
 
 ```mermaid
 %%{init: {"flowchart": {"curve": "linear"}} }%%
 flowchart LR
-    subgraph ATORES[Atores]
-        direction TB
-        U[Usuário]
-        D[Doador]
-        N[Donatário]
-    end
-
-    D -.->|especialização| U
-    N -.->|especialização| U
-
-    subgraph APP[Aplicativo Bem Próximo]
-        conta((Acessar e gerenciar conta))
-        publicacoes((Gerenciar necessidades, campanhas e ofertas))
-        consulta((Consultar e localizar oportunidades))
-        comunicacao((Comunicar-se com outro usuário))
-        doacao((Confirmar e acompanhar doação))
-        seguranca((Reportar e avaliar))
-        localizacao((Autorizar localização))
-    end
-
-    U --> conta
-    U --> consulta
-    U --> comunicacao
-    U --> doacao
-    U --> seguranca
-    D --> publicacoes
-    N --> publicacoes
-    localizacao -.->|&lt;&lt;extend&gt;&gt;| consulta
+    usuario[Usuário] --> conta((Cadastrar e gerenciar conta))
+    conta --> publicacoes((Publicar necessidades, campanhas ou ofertas))
+    publicacoes --> consulta((Consultar oportunidades, filtros e mapa))
+    consulta --> comunicacao((Entrar em contato))
+    comunicacao --> doacao((Confirmar e acompanhar doação))
+    doacao --> seguranca((Avaliar ou reportar))
 ```
 
 ### Cobertura dos casos de uso
@@ -201,7 +179,7 @@ flowchart LR
 | RF-16 | Reportar irregularidade | Usuário |
 | RF-17 | Avaliar doação ou instituição | Usuário |
 
-A tabela detalha os casos agrupados no diagrama e mantém a correspondência com cada requisito funcional. “Autorizar localização” representa a permissão exigida pelo RNF-10 quando o usuário opta por utilizar o mapa e a proximidade. Os demais requisitos não funcionais são condições de qualidade transversais.
+A tabela detalha os casos resumidos no diagrama e mantém a correspondência com cada requisito funcional. A autorização de localização é solicitada quando o usuário opta por utilizar o mapa e a proximidade. Os demais requisitos não funcionais são condições de qualidade transversais.
 
 # Matriz de Rastreabilidade
 
