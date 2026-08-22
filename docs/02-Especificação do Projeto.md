@@ -142,7 +142,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Diagrama de Casos de Uso
 
-Os casos de uso abaixo são derivados das histórias e dos requisitos consolidados e representam as principais interações pelo aplicativo móvel. Doador e donatário são especializações do ator usuário e, portanto, compartilham os casos de uso associados a ele.
+O diagrama agrupa funcionalidades relacionadas para apresentar, de forma resumida, as principais interações com o aplicativo móvel. Doador e donatário são especializações do ator usuário e compartilham os casos de uso gerais.
 
 ```mermaid
 flowchart LR
@@ -154,49 +154,23 @@ flowchart LR
     N -.->|especialização| U
 
     subgraph APP[Aplicativo Bem Próximo]
-        UC01((Cadastrar conta))
-        UC02((Confirmar conta por e-mail e autenticar))
-        UC03((Gerenciar conta))
-        UC04((Registrar necessidade))
-        UC05((Registrar oferta))
-        UC06((Criar campanha de arrecadação))
-        UC07((Editar ou cancelar publicação própria))
-        UC08((Consultar detalhes de solicitação ou oferta))
-        UC09((Visualizar solicitações, campanhas, ofertas e instituições))
-        UC10((Pesquisar, filtrar e ordenar))
-        UC11((Consultar mapa e proximidade))
-        UC12((Conversar por chat ou mensagem))
-        UC13((Confirmar doação e atualizar status))
-        UC14((Acompanhar status))
-        UC15((Consultar histórico))
-        UC16((Reportar irregularidade))
-        UC17((Avaliar doação ou instituição))
-        UC18((Autorizar uso da localização))
+        conta((Acessar e gerenciar conta))
+        publicacoes((Gerenciar necessidades, campanhas e ofertas))
+        consulta((Consultar e localizar oportunidades))
+        comunicacao((Comunicar-se com outro usuário))
+        doacao((Confirmar e acompanhar doação))
+        seguranca((Reportar e avaliar))
+        localizacao((Autorizar localização))
     end
 
-    U --> UC01
-    U --> UC02
-    U --> UC03
-    U --> UC08
-    U --> UC09
-    U --> UC10
-    U --> UC11
-    U --> UC12
-    U --> UC13
-    U --> UC14
-    U --> UC15
-    U --> UC16
-    U --> UC17
-
-    D --> UC05
-    D --> UC07
-
-    N --> UC04
-    N --> UC06
-    N --> UC07
-
-    UC10 -.->|&lt;&lt;include&gt;&gt;| UC09
-    UC18 -.->|&lt;&lt;extend&gt;&gt;| UC11
+    U --> conta
+    U --> consulta
+    U --> comunicacao
+    U --> doacao
+    U --> seguranca
+    D --> publicacoes
+    N --> publicacoes
+    localizacao -.->|&lt;&lt;extend&gt;&gt;| consulta
 ```
 
 ### Cobertura dos casos de uso
@@ -221,7 +195,7 @@ flowchart LR
 | RF-16 | Reportar irregularidade | Usuário |
 | RF-17 | Avaliar doação ou instituição | Usuário |
 
-O caso auxiliar “Autorizar uso da localização” representa a permissão exigida pelo RNF-10 e estende a consulta ao mapa quando o usuário opta por utilizar sua localização atual. Os demais requisitos não funcionais são condições de qualidade transversais e não aparecem como objetivos independentes dos atores.
+A tabela detalha os casos agrupados no diagrama e mantém a correspondência com cada requisito funcional. “Autorizar localização” representa a permissão exigida pelo RNF-10 quando o usuário opta por utilizar o mapa e a proximidade. Os demais requisitos não funcionais são condições de qualidade transversais.
 
 # Matriz de Rastreabilidade
 
