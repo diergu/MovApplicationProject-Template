@@ -79,7 +79,35 @@ O uso da localização permanece opcional: sem autorização, a necessidade aind
 
 O doador acessa o aplicativo e consulta as solicitações, campanhas, ofertas ou instituições disponíveis. Após autorizar o uso da localização, quando desejar, poderá pesquisar, aplicar filtros e visualizar opções próximas no mapa. Em seguida, consulta os detalhes e entra em contato com o donatário por chat ou mensagem para combinar disponibilidade, retirada ou entrega. Ao final, a doação pode ser confirmada, acompanhada pelo status, registrada no histórico e avaliada pelos participantes.
 
-Esse fluxo reduz a busca manual por instituições, facilita o contato entre as partes e mantém um registro das doações. O repositório de origem não fornece um diagrama formal em BPMN para este processo.
+Esse fluxo reduz a busca manual por instituições, facilita o contato entre as partes e mantém um registro das doações. O diagrama abaixo adapta ao Bem Próximo a estrutura de processo apresentada na imagem de referência, incluindo decisões do doador e atividades que podem ser combinadas entre os participantes.
+
+```mermaid
+flowchart LR
+    inicio2((Início)) --> consultar[Consultar solicitações, campanhas, ofertas ou instituições]
+    consultar --> usarLocalizacao2{Deseja usar a localização atual?}
+
+    usarLocalizacao2 -->|Sim| solicitarPermissao[Aplicativo solicita autorização de localização]
+    solicitarPermissao --> localAutorizado{Acesso autorizado?}
+    localAutorizado -->|Sim| resultadosProximos[Exibir opções próximas e marcadores no mapa]
+    localAutorizado -->|Não| pesquisar[Pesquisar, filtrar e ordenar resultados]
+    usarLocalizacao2 -->|Não| pesquisar
+    resultadosProximos --> pesquisar
+
+    pesquisar --> detalhes[Consultar os detalhes da opção selecionada]
+    detalhes --> interesse{Deseja prosseguir com a doação?}
+    interesse -->|Não| consultar
+    interesse -->|Sim| contato[Entrar em contato por chat ou mensagem]
+    contato --> combinarDisponibilidade[Confirmar disponibilidade dos itens]
+    contato --> combinarEntrega[Combinar retirada ou entrega]
+    combinarDisponibilidade --> realizar[Realizar a doação]
+    combinarEntrega --> realizar
+    realizar --> confirmar[Confirmar a conclusão e atualizar o status]
+    confirmar --> historico[Registrar a doação no histórico]
+    historico --> avaliar[Avaliar a experiência]
+    avaliar --> fim2((Fim))
+```
+
+O uso da geolocalização permanece opcional. Caso o usuário não conceda a autorização, ele ainda pode localizar oportunidades por pesquisa, filtros e ordenação, sem utilizar a posição atual do aparelho.
 
 ## Indicadores de Desempenho
 
