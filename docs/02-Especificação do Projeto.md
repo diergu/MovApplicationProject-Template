@@ -43,6 +43,7 @@ O Bem Próximo será um aplicativo móvel para Android e iOS que conectará doad
 O donatário entra no aplicativo, registra uma necessidade e decide se deseja informar sua localização. Em seguida, publica e acompanha a solicitação, podendo editá-la ou cancelá-la.
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}} }%%
 flowchart LR
     inicio((Início)) --> acesso[Entrar ou cadastrar-se]
     acesso --> cadastro[Registrar necessidade]
@@ -59,6 +60,7 @@ flowchart LR
 O doador consulta as oportunidades, utiliza pesquisa, filtros ou mapa e entra em contato com o donatário. As partes combinam a entrega ou retirada, confirmam a doação e podem registrar uma avaliação.
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}} }%%
 flowchart LR
     inicio2((Início)) --> consultar[Consultar oportunidades]
     consultar --> pesquisar[Pesquisar, filtrar ou usar o mapa]
@@ -145,6 +147,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 O diagrama agrupa funcionalidades relacionadas para apresentar, de forma resumida, as principais interações com o aplicativo móvel. Doador e donatário são especializações do ator usuário e compartilham os casos de uso gerais.
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}} }%%
 flowchart LR
     U[Usuário]
     D[Doador]
