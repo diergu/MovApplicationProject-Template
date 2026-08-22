@@ -1,27 +1,30 @@
-# TÍTULO DO PROJETO
+# Bem Próximo — Plataforma de Doações
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de Aplicação Web Front-End — Turma 11`
 
-`SEMESTRE`
+`2025/2 — Eixo 1`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O Bem Próximo é uma aplicação web destinada a facilitar a conexão entre doadores e organizações sociais. Instituições podem divulgar seus dados e necessidades, enquanto doadores encontram informações sobre itens solicitados e locais de doação.
+
+A plataforma busca ampliar a visibilidade das organizações, incentivar a participação comunitária e reduzir o desperdício de itens reutilizáveis. A proposta oferece um ambiente simples e acessível para aproximar diretamente quem deseja doar de quem precisa.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+- Elizabeth França Vaz dos Santos
+- Geovana Vitória Andrade Silva
+- Gildney Chaves Neto
+- Helena Bretas
+- Johnata de Souza do Amparo
 
 ## Orientador
 
-* Nome completo do professor 1
+- Humberto Azevedo Nigri do Carmo
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+O projeto é uma aplicação estática desenvolvida com HTML, CSS e JavaScript. Consulte as instruções de execução em [src/README.md](src/README.md).
 
 # Documentação
 
@@ -43,8 +46,8 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 # Código
 
-<li><a href="src/README.md"> Código Fonte</a></li>
+- [Código-fonte](src/README.md)
 
 # Apresentação
 
-<li><a href="presentation/README.md"> Apresentação da solução</a></li>
+- [Apresentação da solução](presentation/README.md)

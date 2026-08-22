@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Doações</title>
+    <link rel="stylesheet" href="historico.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 5C20 5 15 8 12 12C9 16 8 21 10 26C12 31 17 34 22 36C27 38 33 38 38 35C43 32 46 27 46 22C46 17 43 12 38 9C33 6 28 5 25 5Z" fill="#666" opacity="0.5"/>
+                    <path d="M25 10C21 10 17 12 14 15C11 18 10 22 12 26C14 30 18 33 23 34C28 35 33 34 37 31C41 28 43 24 43 20C43 16 41 12 37 10C33 8 29 10 25 10Z" fill="#888"/>
+                </svg>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquise aqui...">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn">Chat</button>
+                <button class="nav-btn">Visualização de pedidos</button>
+                <button class="nav-btn">Filtrar</button>
+                <button class="nav-btn">Cadastro de itens</button>
+
+                <div class="dropdown">
+                    <button class="nav-btn dropdown-toggle">Configurações</button>
+                    <div class="dropdown-menu">
+                        <a href="#">Idioma</a>
+                        <a href="#">Conta</a>
+                        <a href="#">Privacidade</a>
+                    </div>
+                </div>
+
+                <button class="nav-btn login-btn">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="history-container">
+            <h1 class="history-title">Histórico</h1>
+
+            <div class="table-wrapper">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Data do Pedido</th>
+                            <th>Item Solicitado</th>
+                            <th>Quantidade</th>
+                            <th>Doador</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Data do Pedido">05/09/2025</td>
+                            <td data-label="Item Solicitado">Cesta básica</td>
+                            <td data-label="Quantidade">1</td>
+                            <td data-label="Doador">João Pereira</td>
+                            <td data-label="Status">
+                                <span class="badge badge-recebido">Recebido</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Data do Pedido">20/08/2025</td>
+                            <td data-label="Item Solicitado">Roupas de frio</td>
+                            <td data-label="Quantidade">3 peças</td>
+                            <td data-label="Doador">Ana Santos</td>
+                            <td data-label="Status">
+                                <span class="badge badge-aguarde">Aguarde entrega</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Data do Pedido">10/08/2025</td>
+                            <td data-label="Item Solicitado">Fraldas infantis</td>
+                            <td data-label="Quantidade">2 pacotes</td>
+                            <td data-label="Doador">Anônimo</td>
+                            <td data-label="Status">
+                                <span class="badge badge-analise">Em análise</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="divider">
+        </div>
+    </main>
+</body>
+</html>

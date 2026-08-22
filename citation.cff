@@ -1,29 +1,24 @@
 message: Please cite this software using these metadata.
-title:
+title: Bem Próximo - Plataforma de doações
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: França Vaz dos Santos
+    given-names: Elizabeth
+  - family-names: Bretas
+    given-names: Helena
+  - family-names: Chaves Neto
+    given-names: Gildney
+  - family-names: de Souza do Amparo
+    given-names: Johnata
+  - family-names: Vitória Andrade Silva
+    given-names: Geovana
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Azevedo Nigri do Carmo
+    given-names: Humberto
 keywords:
-  - 
-  - 
-repository-code: 
+  - Projeto
+  - Doação
+  - Próximo
+repository-code: https://github.com/diergu/MovApplicationProject-Template
 version: 1.0.0
-date-released: 2023-10-31
+date-released: 2025-11-23

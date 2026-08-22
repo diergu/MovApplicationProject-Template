@@ -1,68 +1,99 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
+<span style="color:red">Pré-requisitos: <a href="04-Projeto de Interface.md"> Projeto de Interface</a></span>
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+O Bem Próximo é um protótipo web estático executado inteiramente no navegador. Os documentos HTML estruturam as telas, as folhas CSS definem a identidade visual e a responsividade, e os módulos JavaScript controlam navegação, filtros, formulários e dados de demonstração.
 
-![Arquitetura da Solução](img/02-mob-arch.png)
+```mermaid
+flowchart LR
+    U[Usuário] --> B[Navegador]
+    B --> H[HTML]
+    H --> C[CSS]
+    H --> J[JavaScript]
+    J --> D[Dados de demonstração]
+    J --> L[localStorage]
+    G[GitHub Pages] --> B
+```
+
+Não há backend, API própria ou banco de dados no código fornecido. O estado persistente do protótipo é armazenado no `localStorage` do navegador.
 
 ## Diagrama de Classes
 
-O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
+A implementação não utiliza classes JavaScript nem um modelo orientado a objetos formal. O comportamento está dividido por módulos de tela, como cadastro, pedidos de doação, busca de locais, chat, histórico e feedback.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
-
-> - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
-> - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
+| Módulo | Responsabilidade |
+|--------|------------------|
+| `Pagina-Cadastro/paginaCadasto.js` | Cadastro, validação de CPF/CNPJ e login local |
+| `Pagina-Itenscadastro/itens.js` | Registro e exibição de pedidos de doação |
+| `Pagina-Doacoes/doacoes.js` | Renderização dos pedidos disponíveis |
+| `Pagina-Locais/pagina-Locais.js` | Busca e filtragem por cidade, bairro, tipo e item |
+| `Pagina-Chat/paginaChat.js` | Simulação da troca de mensagens |
+| `Pagina-feedback/feedback.js` | Registro e listagem de avaliações |
 
 ## Modelo ER
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
+Como não existe banco de dados, não há Modelo Entidade-Relacionamento persistente. Os dados locais possuem as seguintes estruturas lógicas:
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
+```mermaid
+erDiagram
+    USUARIO {
+        string tipoDocumento
+        string documento
+        string email
+        string senha
+    }
+    PEDIDO_DOACAO {
+        number id
+        string titulo
+        string categoria
+        string quantidade
+        string local
+        string descricao
+    }
+    FEEDBACK {
+        string texto
+        string nota
+    }
+```
 
 ## Esquema Relacional
 
-O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
- 
-As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
-
-> - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
+Não se aplica à versão atual, pois o protótipo não utiliza um banco de dados relacional. Os registros são serializados em JSON e armazenados pelas chaves `usuarios`, `usuarioLogado`, `pedidosDoacao` e `feedbacks` no `localStorage`.
 
 ## Modelo Físico
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+Não existe arquivo `banco.sql` ou camada de persistência no repositório de origem. A adoção de backend e banco de dados exigirá uma etapa posterior de projeto e migração dos dados locais.
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+| Tecnologia | Uso no projeto |
+|------------|----------------|
+| HTML5 | Estrutura semântica das páginas e formulários |
+| CSS3 | Layout, cores, componentes e responsividade |
+| JavaScript | Navegação, validações, filtros, renderização dinâmica e persistência local |
+| Web Storage API | Armazenamento local de usuários, sessão, pedidos e feedbacks |
+| Google Fonts | Fontes Poppins, Inter, Montserrat e Playfair Display |
+| Git e GitHub | Versionamento e colaboração |
+| GitHub Pages | Hospedagem do site estático |
+| Figma | Prototipação das interfaces |
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+A aplicação de origem está publicada como site estático no GitHub Pages: [Bem Próximo](https://icei-puc-minas-pmv-ads.github.io/pmv-ads-2025-2-e1-proj-web-t11-pmv-ads-2025-2-e1-plataformadoacao/src/).
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+Para uma nova publicação, o diretório `src` deve ser servido por um servidor HTTP estático ou configurado como origem de uma página do GitHub Pages.
 
 ## Qualidade de Software
 
-Conceituar qualidade de fato é uma tarefa complexa, mas ela pode ser vista como um método gerencial que através de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+As características de qualidade priorizadas na especificação são responsividade, usabilidade, consistência da interface, acessibilidade, tratamento de erros, compatibilidade, desempenho, segurança, privacidade, integridade, disponibilidade e manutenibilidade.
 
-No contexto de desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem satisfeitas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, tal nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+| Característica | Evidência ou métrica proposta |
+|----------------|-------------------------------|
+| Usabilidade | Taxa de conclusão das tarefas e necessidade de assistência |
+| Compatibilidade | Execução dos casos de teste nos navegadores definidos pelo projeto |
+| Responsividade | Ausência de rolagem horizontal e preservação dos fluxos em diferentes larguras |
+| Desempenho | Tempo de resposta percebido nas buscas, filtros e troca de telas |
+| Acessibilidade | Contraste, identificação de campos, textos alternativos e operação por teclado |
+| Segurança | Ausência de credenciais em texto simples e controle de acesso aos dados |
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software.
-Com base nessas características e nas respectivas sub-características, identifique as sub-características que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software considerando-se alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão a equipe avaliar os objetos de interesse.
-
-> **Links Úteis**:
->
-> - [ISO/IEC 25010:2011 - Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de Software - Engenharia de Software 29](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209/)
+> **Limitação conhecida:** o protótipo de origem armazena senhas em texto simples no `localStorage`. Esse comportamento não atende ao RNF-08 e deverá ser substituído por autenticação segura em uma evolução com backend.

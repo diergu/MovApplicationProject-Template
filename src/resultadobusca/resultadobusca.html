@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../Pagina-Principal/style.css" />
+  <link rel="stylesheet" href="../Pagina-Historico/historico.css">
+  <link rel="stylesheet" href="../Pagina-Doacoes/doacoes.css">
+  <link rel="stylesheet" href="../Pagina-Locais/pagina-Locais.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true">
+        <rect width="24" height="24" rx="6" fill="#8fd0ff"></rect>
+        <path d="M6 12h12" stroke="#21364a" stroke-width="1.5" stroke-linecap="round"></path>
+      </svg>
+      <div class="brand-text">
+        <div class="title">Projeto Doação</div>
+        <div class="subtitle">Plataforma de Doações</div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="search">
+        <input aria-label="Pesquisar" placeholder="Pesquisar..." />
+      </div>
+      <nav class="nav">
+        <button id="toHome" class="nav-btn">Home</button>
+        <button id="toDoações" class="nav-btn">Doações</button>
+        <button id="toBusca" class="nav-btn active">Locais de Doação</button>
+        <button id="toHistorico" class="nav-btn">Histórico</button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="home" class="section">Bem-vindo à Home!</section>
+    <section id="doacoes" class="section">
+      <main class="wrap">
+        <div class="section-title">
+          <h2>Pedidos de doação</h2>
+        </div>
+        <!-- Two columns with request cards -->
+        <div class="requests-grid">
+          <!-- Left column -->
+          <div class="col">
+            <!-- Alimentos -->
+            <article class="req-card">
+              <div class="avatar" aria-hidden="true"></div>
+              <div class="req-body">
+                <span class="chip">Alimentos</span>
+                <h3 class="req-title">Cestas básicas para famílias do Bairro Esperança</h3>
+                <div class="req-lines">
+                  <div class="line w85"></div>
+                  <div class="line w70"></div>
+                  <div class="line w60"></div>
+                </div>
+                <div class="req-meta">
+                  <span>Quantidade: 25</span>
+                  <span>Entrega: Gamboa, RJ</span>
+                </div>
+              </div>
+            </article>
+            <!-- Brinquedos -->
+            <article class="req-card">
+              <div class="avatar" aria-hidden="true"></div>
+              <div class="req-body">
+                <span class="chip">Brinquedos</span>
+                <h3 class="req-title">Kits de brinquedos para ação do Dia das Crianças</h3>
+                <div class="req-lines">
+                  <div class="line w85"></div>
+                  <div class="line w60"></div>
+                  <div class="line w70"></div>
+                </div>
+                <div class="req-meta">
+                  <span>Idade: 4–10</span>
+                  <span>Meta: 60 kits</span>
+                </div>
+              </div>
+            </article>
+            <!-- Roupas -->
+            <article class="req-card">
+              <div class="avatar" aria-hidden="true"></div>
+              <div class="req-body">
+                <span class="chip">Roupas</span>
+                <h3 class="req-title">Agasalhos e calçados para abrigo municipal</h3>
+                <div class="req-lines">
+                  <div class="line w85"></div>
+                  <div class="line w70"></div>
+                  <div class="line w60"></div>
+                </div>
+                <div class="req-meta">
+                  <span>Tamanhos: P ao GG</span>
+                  <span>Urgente</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <!-- Right column -->
+          <div class="col">
+            <!-- Alimentos -->
+            <article class="req-card">
+              <div class="avatar" aria-hidden="true"></div>
+              <div class="req-body">
+                <span class="chip">Alimentos</span>
+                <h3 class="req-title">Leite em pó e fraldas para creche comunitária</h3>
+                <div class="req-lines">
+                  <div class="line w70"></div>
+                  <div class="line w85"></div>
+                  <div class="line w60"></div>
+                </div>
+                <div class="req-meta">
+                  <span>Leite: 90 latas</span>
+                  <span>Fraldas: tam. M e G</span>
+                </div>
+              </div>
+            </article>
+            <!-- Brinquedos -->
+            <article class="req-card">
+              <div class="avatar" aria-hidden="true"></div>
+              <div class="req-body">
+                <span class="chip">Brinquedos</span>
+                <h3 class="req-title">Jogos de tabuleiro para sala de convivência</h3>
+                <div class="req-lines">
+                  <div class="line w85"></div>
+                  <div class="line w70"></div>
+                  <div class="line w60"></div>
+                </div>
+                <div class="req-meta">
+                  <span>Meta: 25 jogos</span>
+                  <span>Preferência: usados em bom estado</span>
+                </div>
+              </div>
+            </article>
+            <!-- Roupas -->
+            <article class="req-card">
+              <div class="avatar" aria-hidden="true"></div>
+              <div class="req-body">
+                <span class="chip">Roupas</span>
+                <h3 class="req-title">Roupas infantis para campanha de inverno</h3>
+                <div class="req-lines">
+                  <div class="line w70"></div>
+                  <div class="line w85"></div>
+                  <div class="line w60"></div>
+                </div>
+                <div class="req-meta">
+                  <span>0–12 anos</span>
+                  <span>Meta: 200 peças</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <section id="quero-doar" class="section">Seção Quero Doar</section>
+
+    <section id="quem-somos" class="section">Informações sobre Quem Somos.</section>
+
+    <section id="feedback" class="section">Área de Feedback.</section>
+
+    <!-- PROCURAR LOCAIS DE DOAÇÃO COM FILTRO -->
+    <section id="quero-buscar" class="section">
+      <main class="container">
+        <section class="card">
+          <header class="card-head">
+            <h1>Procurar Locais de Doação</h1>
+            <p class="lead">
+              Encontre locais próximos para doar ou receber doações usando filtros de tipo e localização.
+            </p>
+          </header>
+
+          <div class="info">
+            <strong>Importância da busca:</strong>
+            <p>Essa funcionalidade ajuda o usuário a localizar facilmente instituições, pontos de coleta e projetos solidários que aceitam o tipo de item desejado.</p>
+          </div>
+
+          <!-- Formulário de busca -->
+          <form id="form-busca" class="form">
+            <label class="field">
+              <span>Palavra-chave</span>
+              <input id="keyword" type="text" placeholder="Ex: roupas, alimentos, brinquedos..." />
+            </label>
+
+            <label class="field">
+              <span>Tipo de item</span>
+              <select id="tipo">
+                <option value="">Selecione...</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="roupas">Roupas</option>
+                <option value="higiene">Produtos de Higiene</option>
+                <option value="brinquedos">Brinquedos</option>
+                <option value="outros">Outros</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Localização</span>
+              <input id="local" type="text" placeholder="Digite sua cidade ou bairro..." />
+            </label>
+
+            <div class="row">
+              <button type="submit" class="btn primary">Buscar Locais</button>
+              <button type="button" id="clear" class="btn ghost">Limpar</button>
+            </div>
+
+            <div id="msg" class="msg"></div>
+
+          </form>
+
+          <!-- Resultados dos filtros aparecem aqui -->
+          <div id="resultados" class="resultados"></div>
+
+        </section>
+      </main>
+    </section>
+
+    <!-- HISTÓRICO -->
+    <section id="historico" class="section">
+      <main class="main-content">
+        <div class="history-container">
+          <h1 class="history-title">Histórico</h1>
+
+          <div class="table-wrapper">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th>Data do Pedido</th><th>Item Solicitado</th><th>Quantidade</th><th>Doador</th><th>Status</th></tr></thead><tbody><tr><td data-label='Data do Pedido'>05/09/2025</td><td data-label='Item Solicitado'>Cesta básica</td><td data-label='Quantidade'>1</td><td data-label='Doador'>João Pereira</td><td data-label='Status'><span class='badge badge-recebido'>Recebido</span></td></tr><tr><td data-label='Data do Pedido'>20/08/2025</td><td data-label='Item Solicitado'>Roupas de frio</td><td data-label='Quantidade'>3 peças</td><td data-label='Doador'>Ana Santos</td><td data-label='Status'><span class='badge badge-aguarde'>Aguarde entrega</span></td></tr><tr><td data-label='Data do Pedido'>10/08/2025</td><td data-label='Item Solicitado'>Fraldas infantis</td><td data-label='Quantidade'>2 pacotes</td><td data-label='Doador'>Anônimo</td><td data-label='Status'><span class='badge badge-analise'>Em análise</span></td></tr></tbody></table></div><hr class='divider'></div></main></section></main>
+
+  <!-- Scripts existentes -->
+  <script src="../Pagina-Principal/script.js"></script>
+  <script src="../Pagina-Locais/pagina-Locais.js"></script>
+
+  <!-- FILTRO DE LOCAIS DE DOAÇÃO - JS INTEGRADO -->
+  <script>
+// Exemplo de dados dos locais de doação
+const locaisDeDoacao = [
+  { nome: "Igreja Esperança", tipo: "alimentos", local: "Gamboa, RJ" },
+  { nome: "Creche Comunitária Sol", tipo: "roupas", local: "Centro, RJ" },
+  { nome: "Projeto Criança Feliz", tipo: "brinquedos", local: "Copacabana, RJ" },
+  { nome: "Associação Mãos Dadas", tipo: "alimentos", local: "Botafogo, RJ" },
+  { nome: "Casa Solidária", tipo: "higiene", local: "Centro, RJ" }
+];
+
+function filtrarLocais() {
+  const keyword = document.getElementById("keyword").value.toLowerCase();
+  const tipo = document.getElementById("tipo").value;
+  const local = document.getElementById("local").value.toLowerCase();
+  const resultados = locaisDeDoacao.filter(l => {
+    const matchKeyword = !keyword || l.nome.toLowerCase().includes(keyword);
+    const matchTipo = !tipo || l.tipo === tipo;
+    const matchLocal = !local || l.local.toLowerCase().includes(local);
+    return matchKeyword && matchTipo && matchLocal;
+  });
+  exibirResultados(resultados);
+}
+
+function exibirResultados(lista) {
+  const div = document.getElementById("resultados");
+  if (lista.length === 0) {
+    div.innerHTML = "<p>Nenhum local encontrado.</p>";
+    return;
+  }
+  div.innerHTML = `<ul class='lista-locais'>
+    ${lista.map(l => `
+      <li><strong>${l.nome}</strong> — ${l.tipo.charAt(0).toUpperCase() + l.tipo.slice(1)}<br/><span>${l.local}</span></li>`
+    ).join("")}
+    </ul>`;
+}
+
+document.getElementById("form-busca").addEventListener("submit", function(e) {
+  e.preventDefault();
+  filtrarLocais();
+});
+
+document.getElementById("clear").addEventListener("click", function() {
+  document.getElementById("form-busca").reset();
+  exibirResultados(locaisDeDoacao);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  exibirResultados(locaisDeDoacao);
+});
+  </script>
+
+<!-- CSS OPCIONAL PARA LISTA DE LOCAIS -->
+<style>
+.lista-locais {
+  list-style: none;
+  padding: 0;
+}
+.lista-locais li {
+  margin-bottom: 16px;
+  background: #f7fafc;
+  border-radius: 6px;
+  padding: 12px;
+}
+</style>
+
+</body></html>

@@ -1,46 +1,43 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+A doação de itens ajuda a reduzir o desperdício, fortalece a solidariedade e oferece apoio direto a pessoas em situação de vulnerabilidade social. Apesar da disposição de muitos cidadãos e empresas em ajudar, ainda existem dificuldades para localizar instituições confiáveis e conhecer suas necessidades reais. As organizações sociais, por sua vez, nem sempre dispõem de canais eficientes para divulgar suas demandas e alcançar potenciais doadores.
+
+O Bem Próximo propõe uma plataforma digital que conecta doadores e organizações sociais de forma direta. As instituições podem registrar suas necessidades de maneira clara e detalhada, enquanto os doadores localizam demandas e destinam itens de acordo com aquilo que é realmente necessário.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+As informações sobre instituições que necessitam de doações estão dispersas e não existe uma plataforma amplamente acessível e confiável que centralize essas demandas. Potenciais doadores enfrentam barreiras para encontrar organizações sérias e transparentes, enquanto instituições filantrópicas possuem dificuldade para divulgar suas necessidades com alcance suficiente.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Esse processo fragmentado reduz a efetividade das doações, dificulta a correspondência entre itens disponíveis e necessidades existentes e contribui para o desperdício de recursos que poderiam ser reutilizados.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+O objetivo geral é desenvolver uma aplicação web que facilite a conexão entre doadores e organizações sociais.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Os objetivos específicos são:
+
+- permitir que instituições sociais cadastrem seus dados e necessidades mais urgentes;
+- disponibilizar aos doadores informações claras sobre instituições e itens solicitados;
+- ampliar a visibilidade das organizações sociais e incentivar a participação comunitária;
+- facilitar a busca por demandas utilizando tipo de item e localização;
+- contribuir para a redução do desperdício de itens reutilizáveis;
+- promover comunicação direta entre doadores e donatários.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A vulnerabilidade social e o desperdício de alimentos, roupas e outros itens demonstram a necessidade de soluções que aproximem recursos disponíveis de quem precisa. A documentação de origem cita dados do IBGE sobre extrema pobreza e informações da Rede Brasileira de Bancos de Alimentos sobre desperdício, reforçando a relevância social do problema.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Já existem plataformas brasileiras de doação, como Doações Gov.br, Abrace uma Causa, Doare, Bliiv e Doebem. Muitas delas concentram campanhas financeiras, arrecadações institucionais ou ferramentas de gestão. O Bem Próximo diferencia-se ao priorizar itens físicos de necessidade imediata, como roupas, alimentos, brinquedos e materiais escolares, com busca por localização e contato direto entre as partes.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+O histórico de doações e as avaliações de usuários também apoiam a transparência e a confiança. Dessa forma, a solução reúne simplicidade, proximidade e visibilidade em um único ambiente digital.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+O público-alvo é composto por:
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+- **Organizações sociais:** ONGs, instituições de caridade, instituições religiosas e bancos de alimentos que precisam divulgar demandas e captar doações;
+- **Doadores individuais:** pessoas físicas interessadas em destinar itens em bom estado a quem precisa;
+- **Doadores empresariais:** pessoas jurídicas interessadas em doar excedentes, apoiar projetos sociais e realizar ações de responsabilidade social;
+- **Pessoas donatárias:** cidadãos em situação de necessidade ou vulnerabilidade que buscam itens para melhorar sua qualidade de vida.
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Esses públicos possuem diferentes níveis de familiaridade com tecnologia. Por isso, a aplicação deve priorizar navegação simples, linguagem clara e acesso fácil às informações.

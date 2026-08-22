@@ -56,12 +56,18 @@ Esse fluxo reduz a busca manual por instituições, facilita o contato entre as 
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
+O repositório de origem não contém medições históricas. Os indicadores abaixo são propostos para uma futura versão com persistência centralizada:
 
-Usar o seguinte modelo: 
+| Indicador | Cálculo | Finalidade |
+|-----------|---------|------------|
+| Taxa de necessidades atendidas | Doações concluídas ÷ necessidades encerradas × 100 | Avaliar a efetividade da plataforma |
+| Tempo até o primeiro contato | Média entre publicação e primeira mensagem recebida | Medir a agilidade da conexão entre usuários |
+| Volume de itens destinados | Soma das quantidades confirmadas como doadas | Acompanhar o impacto material das doações |
+| Necessidades ativas | Quantidade de solicitações e campanhas abertas | Dimensionar a demanda disponível |
+| Conversão de busca em contato | Contatos iniciados ÷ buscas realizadas × 100 | Avaliar a relevância dos filtros e resultados |
+| Satisfação dos participantes | Média das notas de feedback | Acompanhar a percepção sobre a experiência |
 
-![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
+Esses indicadores dependem de registros de datas, quantidades, estados, buscas, contatos e avaliações. O protótipo atual ainda não possui backend capaz de consolidar essas informações.
 
 ## Requisitos
 
@@ -98,7 +104,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RNF-03 | Consistência da interface | A interface deve manter consistência visual e de navegação entre as diferentes telas da aplicação. | Alta |
 | RNF-04 | Acessibilidade | A interface deve seguir princípios básicos de acessibilidade, incluindo contraste adequado, campos identificados e botões compreensíveis. | Média |
 | RNF-05 | Tratamento de erros | O sistema deve apresentar mensagens de erro claras quando uma operação não puder ser concluída. | Média |
-| RNF-06 | Compatibilidade | A aplicação web deve funcionar nos navegadores Google Chrome e Microsoft Edge sem perda de funcionalidades. | Alta |
+| RNF-06 | Compatibilidade | A aplicação deve ser compatível, caso seja aplicativo móvel, com Android e iOS nas versões suportadas pelo projeto. | Alta |
 | RNF-07 | Desempenho | Consultas, pesquisas, filtros e mapas devem possuir tempo de resposta adequado, sem comprometer a navegação. | Média |
 | RNF-08 | Segurança das credenciais | O sistema deve proteger credenciais e dados pessoais, não armazenando senhas em texto simples. | Alta |
 | RNF-09 | Controle de acesso | O sistema deve garantir que usuários somente alterem dados, solicitações e publicações para os quais possuam autorização. | Alta |
@@ -121,29 +127,59 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Diagrama de Casos de Uso
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
+Os casos de uso abaixo são derivados das histórias e dos requisitos consolidados.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
+```mermaid
+flowchart LR
+    D[Doador]
+    N[Donatário]
+    U[Usuário]
 
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
+    UC1((Cadastrar e autenticar))
+    UC2((Gerenciar conta))
+    UC3((Registrar oferta))
+    UC4((Registrar necessidade ou campanha))
+    UC5((Pesquisar e filtrar))
+    UC6((Consultar mapa e detalhes))
+    UC7((Conversar por chat))
+    UC8((Confirmar e acompanhar doação))
+    UC9((Consultar histórico))
+    UC10((Avaliar ou reportar))
+
+    D --> UC1
+    D --> UC2
+    D --> UC3
+    D --> UC5
+    D --> UC6
+    D --> UC7
+    D --> UC8
+    D --> UC9
+    N --> UC1
+    N --> UC2
+    N --> UC4
+    N --> UC5
+    N --> UC7
+    N --> UC8
+    N --> UC9
+    U --> UC10
+```
 
 # Matriz de Rastreabilidade
 
-A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualização dos relacionamento entre requisitos e outros artefatos ou objetos, permitindo a rastreabilidade entre os requisitos e os objetivos de negócio. 
+As histórias são identificadas pela ordem em que aparecem na tabela de Histórias de Usuário, sem alterar seu conteúdo original.
 
-A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
+| História | Síntese | Requisitos relacionados |
+|----------|---------|-------------------------|
+| HU-01 | Campanha de arrecadação de agasalhos | RF-06, RF-07, RF-08 e RF-14 |
+| HU-02 | Lista atualizada de necessidades | RF-04, RF-07, RF-08, RF-09 e RF-10 |
+| HU-03 | Redistribuição de itens excedentes | RF-05, RF-08, RF-09, RF-12 e RF-13 |
+| HU-04 | Oferta de itens por pessoa física | RF-05, RF-09, RF-10 e RF-11 |
+| HU-05 | Oferta de lotes por empresa | RF-05, RF-09 e RF-10 |
+| HU-06 | Contato entre as partes | RF-12 |
+| HU-07 | Acompanhamento e histórico | RF-14 e RF-15 |
+| HU-08 | Reporte de irregularidades | RF-16 |
 
-![Exemplo de matriz de rastreabilidade](img/02-matriz-rastreabilidade.png)
-
-> **Links Úteis**:
-> - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
-> - [Verificação da rastreabilidade de requisitos usando a integração do IBM Rational RequisitePro e do IBM ClearQuest Test Manager](https://developer.ibm.com/br/tutorials/requirementstraceabilityverificationusingrrpandcctm/)
-> - [IBM Engineering Lifecycle Optimization – Publishing](https://www.ibm.com/br-pt/products/engineering-lifecycle-optimization/publishing/)
+Os requisitos não funcionais são transversais e se aplicam às interfaces e fluxos correspondentes.
 
 
 # Gerenciamento de Projeto
@@ -174,6 +210,4 @@ Os papéis informados na documentação de origem são:
 
 ## Gestão de Orçamento
 
-O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
-
-![Orçamento](img/02-orcamento.png)
+O repositório de origem não informa orçamento, custos de equipe ou despesas de infraestrutura. A versão atual utiliza ferramentas com acesso gratuito para o escopo acadêmico — GitHub, GitHub Pages e Figma — e não há valor financeiro documentado para registrar.

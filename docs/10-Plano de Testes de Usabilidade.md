@@ -1,71 +1,89 @@
 # Plano de Testes de Usabilidade
 
-Os testes de usabilidade permitem avaliar a qualidade da interface com o usuário da aplicação interativa.
+Os testes de usabilidade avaliarão se doadores e donatários conseguem concluir as tarefas essenciais do Bem Próximo com clareza, eficiência e pouca ou nenhuma assistência.
 
-Um plano de teste de usabilidade deverá conter: 
+## Definição dos objetivos
 
-## Definição do(s) objetivo(s)
-
-Antes de iniciar os testes, é essencial definir o que se deseja avaliar na usabilidade do sistema. 
-Alguns exemplos de objetivos são:
-- Verificar se os usuários conseguem concluir tarefas essenciais sem dificuldades.
-- Identificar barreiras na navegação e interação com o sistema.
-- Avaliar a eficiência e a satisfação do usuário ao utilizar a interface.
-- Testar a acessibilidade para diferentes perfis de usuários.
+- verificar se o cadastro e o login são compreensíveis;
+- avaliar se os usuários encontram pedidos e locais de doação;
+- identificar dificuldades no registro de itens;
+- validar a compreensão do chat, do histórico e do feedback;
+- observar consistência visual, responsividade e acessibilidade básica;
+- coletar a percepção dos participantes sobre confiança e facilidade de uso.
 
 ## Seleção dos participantes
 
-Para garantir que o teste reflita o uso real do sistema, escolha participantes representativos do público-alvo.
+Recomenda-se selecionar ao menos cinco participantes representativos dos perfis definidos na especificação:
 
-**Critérios para selecionar participantes:**
-- Perfis variados (experientes e iniciantes no sistema).
-- Diferentes níveis de familiaridade com tecnologia.
-- Pessoas com necessidades especiais (se aplicável).
+- pessoa física doadora;
+- representante de empresa doadora;
+- representante de ONG ou instituição religiosa;
+- pessoa donatária;
+- participante com pouca familiaridade com tecnologia.
 
-**Quantidade recomendada:**
-Mínimo: 5 participantes.
-Ideal: Entre 8 e 12 para maior diversidade.
+Não devem ser registrados dados pessoais sensíveis. Cada voluntário será identificado apenas por um código, como `U01`.
 
 ## Definição de cenários de teste
 
-Os cenários representam tarefas reais que os usuários executam no sistema. Neste projeto, cada grupo deverá definir, no mínimo, **CINCO cenários para a aplicação** e cada cenário deve incluir:
+### Cenário 1 — Criar conta e entrar
 
-- Objetivo: O que será avaliado.
-- Contexto: A situação que leva o usuário a interagir com o sistema.
-- Tarefa: A ação que o usuário deve realizar.
-- Critério de sucesso: Como determinar se a tarefa foi concluída corretamente.
+**Objetivo:** avaliar clareza dos formulários e mensagens de validação.
 
-**Exemplo: Cenário 1**
+**Contexto:** um novo usuário deseja acessar a plataforma.
 
-**Objetivo:** Avaliar a facilidade e eficiência do usuário em pesquisar, adicionar um produto ao carrinho e finalizar a compra sem dificuldades.
+**Tarefa:** cadastrar CPF ou CNPJ, e-mail e senha e depois realizar login.
 
-**Contexto:** O usuário deseja comprar um notebook para uso pessoal. Para isso, ele deverá entrar no site www.compras.com.br para buscar opções disponíveis, comparar preços, adicionar o produto ao carrinho e finalizar a compra com pagamento via cartão de crédito.
+**Critério de sucesso:** concluir o acesso sem assistência e compreender eventuais mensagens de erro.
 
-**Tarefa(s):** 
-- Acessar o site e localizar a barra de pesquisa.
-- Pesquisar por "notebook" e utilizar os filtros para refinar a busca (exemplo: marca, preço, processador).
-- Escolher um dos notebooks listados e acessar a página do produto.
-- Adicionar o produto ao carrinho.
-- Finalizar a compra, preenchendo os dados de pagamento e endereço de entrega.
-- Confirmar a transação e verificar a tela de pedido concluído.
+### Cenário 2 — Encontrar uma necessidade
 
-**Critério(s) de Sucesso(s):**
-- O usuário consegue encontrar e filtrar os produtos sem dificuldades.
-- O produto é adicionado ao carrinho corretamente.
-- O usuário consegue preencher as informações de pagamento e entrega sem erros.
-- A compra é finalizada com sucesso, e o usuário visualiza a confirmação do pedido.
-- Todo o processo ocorre em menos de 5 minutos, sem necessidade de assistência.
+**Objetivo:** avaliar navegação, leitura dos cartões e filtros.
+
+**Contexto:** um doador possui um item e procura alguém que necessite dele.
+
+**Tarefa:** localizar um pedido compatível e abrir a opção de contato.
+
+**Critério de sucesso:** encontrar um pedido adequado e identificar responsável, local e forma de contato.
+
+### Cenário 3 — Registrar um item ou necessidade
+
+**Objetivo:** avaliar o formulário de registro.
+
+**Contexto:** um usuário deseja publicar um item disponível ou necessário.
+
+**Tarefa:** preencher e enviar o formulário de registro.
+
+**Critério de sucesso:** concluir o cadastro, compreender a confirmação e encontrar o novo registro na interface.
+
+### Cenário 4 — Buscar um local de doação
+
+**Objetivo:** avaliar a busca por texto, categoria e localização.
+
+**Contexto:** um doador procura um ponto que aceite determinado tipo de item.
+
+**Tarefa:** informar uma localidade, selecionar uma categoria e refinar os resultados.
+
+**Critério de sucesso:** obter resultados compatíveis ou compreender a mensagem de ausência de locais.
+
+### Cenário 5 — Consultar histórico e enviar feedback
+
+**Objetivo:** avaliar a compreensão dos estados e do formulário de avaliação.
+
+**Contexto:** após uma interação, o usuário quer consultar seu histórico e avaliar a experiência.
+
+**Tarefa:** localizar uma doação no histórico e enviar comentário e nota.
+
+**Critério de sucesso:** identificar corretamente o estado da doação e receber confirmação do feedback.
 
 ## Métodos de coleta de dados
 
-Os dados coletados devem ajudar a entender a experiência dos usuários e os dados podem ser coletados por observação direta incluindo métricas quantitativas (quantidade de cliques, número de erros, tempo gasto para cada tarefa etc.), métricas qualitativas (dificuldades, comentários etc.) e questionários pós-teste (A interface foi fácil de entender? Você encontrou dificuldades em alguma etapa? O que poderia ser melhorado?)
+Para cada cenário serão registrados:
 
-Para cada voluntário do teste, é fundamental coletar e apresentar todos os dados/métricas previamente definidos, mas não se esqueça: atendendo à LGPD (Lei Geral de Proteção de Dados), nenhum dado sensível, que permita identificar o voluntário, deverá ser apresentado).
+- tempo total de conclusão;
+- quantidade aproximada de cliques;
+- conclusão ou abandono da tarefa;
+- erros e solicitações de ajuda;
+- comentários espontâneos;
+- resposta a um questionário breve de satisfação.
 
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
-
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+As observações qualitativas serão agrupadas por gravidade: crítica, moderada ou leve.

@@ -1,0 +1,141 @@
+:root {
+  --blue: #69ade9;
+  --light-blue: #cfe9ff;
+  --white: #edca89;
+  --orange: #eebb4c;
+  --dark: #21364a;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 7px 18px rgba(0,0,0,0.1);
+}
+
+.form-inline {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--blue), var(--white), var(--orange));
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.local-item {
+  background: #f2f2f2;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.info-text {
+  background: #fff7ef;
+  padding: 12px;
+  border-left: 4px solid var(--orange);
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.resultados-topo {
+  display: flex;
+  justify-content: space-between; /* empurra p/ direita */
+  align-items: center;
+}
+
+#filtroFlutuante {
+  margin-left: auto; /* garante que fique do lado direito */
+}
+
+.filtro-container {
+  position: relative;
+}
+
+.btn-filtro {
+  background: #69ade9;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filtro-flutuante-lista {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  width: 230px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 999;
+  font-size: 14px;
+  display: none;   /* ✅ GARANTE QUE COMECE FECHADO */
+}
+
+.filtro-flutuante-lista.aberto {
+  display: block;  /* ✅ só abre quando clicar */
+}
+
+.filtro-flutuante-lista .titulo {
+  font-weight: bold;
+  color: #ccc;
+  text-align: center;
+  margin: 10px 0 6px;
+}
+
+.filtro-opcao {
+  background: #f4f4f4;
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+  font-size: 13px;
+  cursor: pointer;   /* ✅ mãozinha */
+}
+
+.filtro-opcao:hover {
+  background: #e0e0e0;
+}

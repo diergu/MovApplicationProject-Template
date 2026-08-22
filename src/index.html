@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- Fazendo o teste para estruturar a pagina -->
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Próximo</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="Pagina-Cadastro/paginaCadastro.css">
+    <link rel="stylesheet" href="Pagina-Chat/paginaChat.css">
+    <link rel="shortcut icon" href="Logo.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <img src="Logo.jpg" alt="Logo Bem Próximo" class="brand-logo" />
+        <div class="brand-text">
+            <div class="title">BEM PRÓXIMO</div>
+            <div class="subtitle">Plataforma de Doações</div>
+        </div>
+        </div>
+
+
+        <!-- Menu com botões para abrir "popups" igual o da Helena -->
+        <nav class="menu">
+            <button data-target="home" id="toHome" class="nav-btn">Home</button>
+            <button data-target="quemsomos" id="toQuem Somos?" class="nav-btn">Quem Somos</button>
+            <button data-target="sobre" id="toSobre" class="nav-btn">Sobre</button>
+            <!-- Botão de cadastro -->
+            <button class="nav-btn" id="btncadastro">Quero doar</button>
+        </nav>
+
+
+    </header>
+    <main class="main-home">
+        <section id="home" class="home-blocos">
+
+            <div class="texto1">
+                <h2> Faça sua doação.</h2>
+                <img src="donate.jpg">
+
+                <p>Sua doação faz a diferença!
+                    Ao contribuir, você ajuda a criar uma rede de solidariedade
+                    que transforma realidades e oferece novas oportunidades.
+                    Juntos, podemos construir um mundo mais justo e solidário.
+                    Doe e faça a diferença!
+                </p>
+
+            </div>
+
+
+            <div class="texto2">
+
+                <h2>Conectando quem tem <br>a quem precisa.<br></h2>
+
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title> Projeto Doação </title>
+                <link rel="stylesheet" type="text/css" href="index.css">
+                <link rel="stylesheet" href="Pagina-Cadastro/paginaCadastro.css">
+                <link rel="stylesheet" href="Pagina-Chat/paginaChat.css">
+
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap');
+                </style>
+
+                </head>
+                <p>Aproxima quem quer ajudar de quem precisa de apoio. Aqui, sua doação, seja de itens, recursos ou
+                    tempo, encontra um destino certo e transforma vidas de verdade.</p>
+                <img src="conecta.jpg">
+            </div>
+
+            <div class="texto3">
+
+                <h2>Apoie uma Causa.</h2>
+                <img src="apoio.jpg">
+                <p>Contribua com uma das instituições e ajude quem mais precisa.
+                    Sua doação é um gesto de esperança e solidariedade.
+                    Pequenos gestos criam grandes transformações.
+                </p>
+
+            </div>
+        </section>
+    </main>
+
+    <div class="quemsobre">
+
+        <section id="quem-somos" class="quemsomos">
+            <img src="Quem.jpeg" alt="Quem Somos">
+            <div class="texto-bloco">
+
+                <h2>Quem Somos</h2>
+                <p>Somos um grupo de estudantes da PUC Minas, que formamos uma equipe comprometida com a transformação
+                    social por meio da tecnologia e da solidariedade. Nosso
+                    propósito é aproximar quem deseja ajudar de quem mais precisa, criando uma ponte segura e eficiente
+                    entre doadores e instituições sociais.
+                    Acreditamos que cada gesto de generosidade tem o poder de mudar realidades — e é por isso que
+                    desenvolvemos esta plataforma digital: um espaço confiável, transparente e acessível, que conecta
+                    pessoas, organizações e causas de forma simples e humana.
+                    Nosso trabalho é guiado por valores como empatia, responsabilidade social, transparência e
+                    colaboração.
+                    Mais do que uma ferramenta digital, somos uma rede de esperança e impacto, unindo forças para
+                    construir
+                    um futuro mais justo e solidário.</p>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobreprojeto">
+            <img src="sobre.png" alt="Sobre o Projeto">
+            <div class="texto-bloco">
+                <h2>Sobre o Projeto</h2>
+                <p>O Projeto Doação nasceu da necessidade de tornar o ato de doar mais acessível, confiável e eficiente.
+                    Percebemos que, embora existam milhões de pessoas dispostas a ajudar, muitas enfrentam dificuldades
+                    para
+                    encontrar instituições sérias e que realmente precisam de apoio. Ao mesmo tempo, diversas ONGs e
+                    entidades sociais têm pouco alcance para divulgar suas demandas e captar doações.
+
+                    A plataforma surge como uma solução digital inovadora, que conecta doadores e organizações em um só
+                    lugar.
+                    Aqui, as instituições podem cadastrar suas necessidades e informações de forma transparente,
+                    enquanto os
+                    doadores encontram facilmente oportunidades reais de fazer o bem — com segurança e clareza.
+
+                    Nosso objetivo é reduzir o desperdício, ampliar a solidariedade e fortalecer o impacto social
+                    coletivo,
+                    construindo uma corrente do bem que transforma vidas por meio da colaboração e da empatia.</p>
+            </div>
+        </section>
+    </div>
+    <!-- Pagina de Cadastro -->
+        <div class="telaCadastroLogin" id="tcadastrologin" style="display: none;">
+            <div class="cntcadastrologin">
+
+                <!-- Formulário de Cadastro -->
+                <form class="cntcds" action="#" method="post">
+                <div class="fecharcadastro">&times;</div>
+                <h1 id="hcad">Faça seu Cadastro!</h1>
+
+                <label for="cnpj">CNPJ ou CPF:</label>
+                <input type="text" id="cnpj" placeholder="Somente Números">
+
+                <label for="email-cadastro">E-Mail:</label>
+                <input type="email" name="email-cadastro" id="email-cadastro" placeholder="exemplo@email.com">
+
+                <label for="senha-cadastro">Senha:</label>
+                <input type="password" name="senha-cadastro" id="senha-cadastro">
+
+                <label for="confirmesenha">Confirme a Senha:</label>
+                <input type="password" name="confirmesenha" id="confirmesenha">
+
+                <button type="submit">Cadastrar</button>
+                <p class="pcad">Já possui cadastro? <a href="#" id="link-login">Faça seu login!</a></p>
+                </form>
+
+                <!-- Formulário de Login -->
+                <form class="cntlgn" action="#" method="post">
+                <div class="fecharlogin">&times;</div>
+                <h1 id="hlgn">Faça seu login!</h1>
+
+                <label for="email-login">E-Mail:</label>
+                <input type="email" name="email-login" id="email-login" placeholder="exemplo@email.com">
+
+                <label for="senha-login">Senha:</label>
+                <input type="password" name="senha-login" id="senha-login">
+
+                <button type="submit">Entrar</button>
+                <p class="plgn">Não possui conta? <a href="#" id="link-cadastro">Faça seu cadastro!</a></p>
+                </form>
+
+                <!-- Gradiente -->
+                <div class="gradiante"></div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- Rodapé da pagina -->
+
+    <footer>
+        <p>2025 - Plataforma de doação - todos os direitos reservados</p>
+    </footer>
+
+    <script src="Pagina-Cadastro/paginaCadasto.js"></script>
+    <script src="index.js"></script>
+</body>
+
+
+
+
+</html>

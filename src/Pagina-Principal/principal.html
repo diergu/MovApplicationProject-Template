@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Próximo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../Pagina-Historico/historico.css">
+    <link rel="stylesheet" href="../Pagina-Doacoes/doacoes.css">
+    <link rel="stylesheet" href="../Pagina-Locais/pagina-Locais.css">
+    <link rel="stylesheet" href="../Pagina-Chat/paginaChat.css">
+    <link rel="stylesheet" href="../Pagina-feedback/feedback.css">
+    <link rel="stylesheet" href="../Pagina-Itenscadastro/itens.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Logo.ico" type="image/x-icon">
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="Logo.jpg " alt="Logo Bem Próximo" class="brand-logo" />
+      <div class="brand-text">
+        <div class="title">BEM PRÓXIMO</div>
+        <div class="subtitle">Plataforma de Doações</div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="search">
+        <input aria-label="Pesquisar" placeholder="Pesquisar..." />
+      </div>
+
+      <nav class="nav">
+        <button id="toCadastrar" class="nav-btn outline">Doar Item</button>
+        <button id="toDoações" class="nav-btn">Doações</button>
+        <button id="toBusca" class="nav-btn active">Locais de Doação</button>
+        <button id="toHistorico" class="nav-btn">Histórico</button>
+        <button id="toChat" class="nav-btn">Chat</button>
+        <button id="toFeedback" class="nav-btn">Feedback</button>
+      </nav>
+    </div>
+  </header>
+
+   <main>
+    <section id="doacoes" class="section">
+    <div id= "app"></div>
+  </main>
+    </section>
+    <section id="feedback" class="section">
+      <main class="container">
+
+    <article class="card">
+      <h2>Deixe seu Feedback</h2>
+
+      <p class="info-text">
+        O feedback é essencial para o crescimento da nossa plataforma.
+        Através da sua opinião, conseguimos entender o que está funcionando, o que pode melhorar
+        e como tornar o processo de doações ainda mais eficiente e humano.
+        Cada comentário nos ajuda a aprimorar a Plataforma Doações e impactar mais vidas.
+      </p>
+
+      <form id="formFeedback" class="form">
+        <label class="field">
+          <span>Seu comentário</span>
+          <textarea id="comentario" required placeholder="Escreva sua opinião aqui..."></textarea>
+        </label>
+
+        <label class="field">
+          <span>Avaliação (1 a 5)</span>
+          <select id="nota" required>
+            <option value="">Selecione…</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </label>
+
+        <button type="submit" class="btn primary">Enviar</button>
+      </form>
+
+      <p id="msg" class="fade"></p>
+    </article>
+
+    <article class="card">
+      <h2>Feedbacks Recebidos</h2>
+      <div id="listaFeedbacks"></div>
+    </article>
+
+  </main>
+    </section>
+
+ <section id="cadastrar-item" class="section">
+    <div class="wrap">
+        <div class="cadastro-item-container">
+
+            <h2>Registrar Item para Doação</h2>
+            <p class="lead-text">
+                Preencha os dados abaixo para disponibilizar seu item na plataforma.
+            </p>
+
+            <form id="form-doar-item" class="form-cadastro-doacao">
+
+                <label class="field">
+                    <span>Título do Item</span>
+                    <input type="text" id="doar-titulo" required placeholder="Ex: Cesta básica com 10 itens" />
+                </label>
+
+                <label class="field">
+                    <span>Categoria</span>
+                    <select id="doar-categoria" required>
+                        <option value="">Selecione a categoria...</option>
+                        <option value="Alimentos">Alimentos</option>
+                        <option value="Roupas">Roupas</option>
+                        <option value="Higiene Pessoal e Limpeza">Higiene Pessoal e Limpeza</option>
+                        <option value="Saúde e Medicamentos">Saúde e Medicamentos</option>
+                        <option value="Voluntariado">Voluntariado</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </label>
+
+                <label class="field" id="outra-categoria-field" style="display: none;">
+                    <span>Especifique a Categoria:</span>
+                    <input type="text" id="outra-categoria-input" placeholder="Ex: Livros, Eletrônicos" />
+                </label>
+
+                <div class="row-fields">
+                    <label class="field half">
+                        <span>Cidade</span>
+                        <input type="text" id="doar-quantidade" required placeholder="Cidade de retirada" />
+                    </label>
+
+                    <label class="field half">
+                        <span>Bairro</span>
+                        <input type="text" id="doar-local" required placeholder="Bairro para retirada" />
+                    </label>
+                </div>
+
+                <label class="field">
+                    <span>Descrição Detalhada (Opcional)</span>
+                    <textarea id="doar-descricao" rows="3" placeholder="Detalhes sobre o estado do item, validade ou tamanhos."></textarea>
+                </label>
+
+                <button type="submit" class="btn primary large">Registrar Doação</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de feedback de sucesso -->
+    <div id="modal-sucesso" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <h3 id="modal-title">Cadastrado com sucesso!</h3>
+            <p id="modal-msg">Seu item foi registrado e já está disponível na lista.</p>
+            <button id="modal-fechar" class="btn">Fechar</button>
+        </div>
+    </div>
+</section>
+
+    <section id="quero-buscar" class="section">
+        <main class="container">
+
+    <article class="card">
+      <h2>Buscar Locais</h2>
+
+      <p class="info-text">
+        Encontrar o local certo para doar faz toda a diferença.
+        Nossa ferramenta de busca facilita o processo, conectando você aos pontos de doação
+        que realmente precisam de ajuda, de acordo com tipo de item e localização.
+        Quanto mais acessível for doar, mais pessoas conseguimos alcançar juntas. 🧡🤝
+      </p>
+
+      <form id="formBusca" class="form-inline">
+        <input id="termo" placeholder="Buscar por nome, bairro, cidade...">
+        <select id="tipo">
+          <option value="">Tipo (Todos)</option>
+          <option value="alimentos">Alimentos</option>
+          <option value="roupas">Roupas</option>
+          <option value="higiene">Higiene</option>
+        </select>
+        <button class="btn primary" type="submit">Buscar</button>
+      </form>
+    </article>
+
+    <article class="card">
+      <div class="resultados-topo">
+            <h2>Resultados</h2>
+
+            <!-- Botão flutuante -->
+            <div class="filtro-container">
+              <button id="btnFiltro" class="btn-filtro">
+                ☰ Filtros
+              </button>
+
+              <!-- Caixa flutuante -->
+              <div id="filtroFlutuante" class="filtro-flutuante-lista oculto"></div>
+            </div>
+          </div>
+
+          <div id="resultados"></div>
+    </article>
+
+  </main>
+
+    </section>
+    <section id="historico" class="section">
+       <main class="main-content">
+        <div class="history-container">
+            <h1 class="history-title">Histórico</h1>
+
+            <div class="table-wrapper">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Data do Pedido</th>
+                            <th>Item Solicitado</th>
+                            <th>Quantidade</th>
+                            <th>Doador</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Data do Pedido">05/09/2025</td>
+                            <td data-label="Item Solicitado">Cesta básica</td>
+                            <td data-label="Quantidade">1</td>
+                            <td data-label="Doador">João Pereira</td>
+                            <td data-label="Status">
+                                <span class="badge badge-recebido">Recebido</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Data do Pedido">20/08/2025</td>
+                            <td data-label="Item Solicitado">Roupas de frio</td>
+                            <td data-label="Quantidade">3 peças</td>
+                            <td data-label="Doador">Ana Santos</td>
+                            <td data-label="Status">
+                                <span class="badge badge-aguarde">Aguarde entrega</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Data do Pedido">10/08/2025</td>
+                            <td data-label="Item Solicitado">Fraldas infantis</td>
+                            <td data-label="Quantidade">2 pacotes</td>
+                            <td data-label="Doador">Anônimo</td>
+                            <td data-label="Status">
+                                <span class="badge badge-analise">Em análise</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="divider">
+        </div>
+    </main>
+    </section>
+    <section id="chat" class="section">
+      <div class="chat-container">
+
+        <!-- Lista de contatos -->
+        <aside class="chat-contatos">
+          <h2>Conversas</h2>
+
+          <ul id="lista-contatos">
+            <li class="contato ativo" data-nome="João Pereira">
+              <div class="foto-perfil">
+                <img src="../Pagina-Chat/imagens/avatar_homem.png" alt="Foto de João">
+              </div>
+
+              <div class="info">
+                <span class="nome">João Pereira</span>
+                <span class="previa">“A cesta já foi entregue?”</span>
+              </div>
+            </li>
+
+            <li class="contato" data-nome="Ana Santos">
+              <div class="foto-perfil">
+                <img src="../Pagina-Chat/imagens/avatar_mulher.png" alt="Foto de Ana">
+              </div>
+
+              <div class="info">
+                <span class="nome">Ana Santos</span>
+                <span class="previa">“Obrigada pelas roupas!”</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Janela de mensagens -->
+        <div class="chat-mensagens">
+          <header class="chat-header">
+            <h2 id="nome-contato">João Pereira</h2>
+          </header>
+
+          <div class="chat-corpo" id="chat-corpo"></div>
+
+          <form class="chat-input" id="chat-form">
+            <input
+              type="text"
+              id="chat-msg"
+              placeholder="Digite uma mensagem..."
+              autocomplete="off"
+            />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <script src="script.js"></script>
+  <script src="../Pagina-Locais/pagina-Locais.js"></script>
+  <script src="../Pagina-Chat/paginaChat.js"></script>
+  <script src="../Pagina-feedback/feedback.js"></script>
+  <script src="../Pagina-Doacoes/doacoes.js"></script>
+  <script src="../Pagina-Itenscadastro/itens.js"></script>
+</body>
+</html>
