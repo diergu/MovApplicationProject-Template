@@ -32,31 +32,31 @@ O projeto de origem define quatro perfis de usuários. Como não foram fornecido
 
 ### Análise da Situação Atual
 
-Atualmente, as informações sobre instituições que necessitam de doações estão dispersas e nem sempre são facilmente verificáveis. Potenciais doadores encontram dificuldade para localizar organizações confiáveis e descobrir quais itens são realmente necessários. Ao mesmo tempo, ONGs, instituições de caridade, grupos religiosos e bancos de alimentos possuem alcance limitado para divulgar suas demandas.
+Atualmente, as informações sobre instituições e pessoas que necessitam de doações estão dispersas e nem sempre são facilmente verificáveis. Potenciais doadores encontram dificuldade para localizar organizações confiáveis, identificar necessidades atualizadas e descobrir opções próximas. Ao mesmo tempo, ONGs, instituições de caridade, grupos religiosos e bancos de alimentos possuem alcance limitado para divulgar suas demandas.
 
-Sem um canal centralizado, o processo depende da procura individual por instituições e de contatos realizados separadamente. Essa fragmentação reduz o alcance das campanhas, dificulta a correspondência entre oferta e necessidade e pode fazer com que itens úteis permaneçam parados ou sejam desperdiçados.
+Sem um aplicativo centralizado, o processo depende da procura individual em redes sociais, páginas e grupos de mensagens, seguida por contatos realizados separadamente. Essa fragmentação reduz o alcance das campanhas, dificulta a correspondência entre oferta e necessidade e pode fazer com que itens úteis permaneçam parados ou sejam desperdiçados. Também impede que o usuário aproveite recursos comuns do celular, como localização, mapas e acesso imediato durante o deslocamento.
 
 ### Descrição Geral da Proposta
 
-O Bem Próximo é uma aplicação web front-end destinada a aproximar doadores de organizações sociais e pessoas que necessitam de itens. A plataforma permite divulgar necessidades, encontrar solicitações e instituições por tipo de item e localização, visualizar pontos em mapa e estabelecer contato direto entre as partes.
+O Bem Próximo será um aplicativo móvel para Android e iOS destinado a aproximar doadores de organizações sociais e pessoas que necessitam de itens. O aplicativo permitirá divulgar necessidades, encontrar solicitações e instituições por tipo de item e localização, visualizar pontos em mapa e estabelecer contato direto entre as partes.
 
-A proposta prioriza doações de itens físicos de necessidade imediata, como roupas, alimentos, brinquedos e materiais escolares. O projeto busca ampliar a visibilidade das organizações, reduzir o desperdício de itens reutilizáveis e tornar o processo de doação mais simples, transparente e acessível. Recursos de histórico e avaliação apoiam a confiança entre os participantes.
+A proposta prioriza doações de itens físicos de necessidade imediata, como roupas, alimentos, brinquedos e materiais escolares. A experiência será adaptada a telas móveis e solicitará autorização antes de acessar a localização do usuário. O projeto busca ampliar a visibilidade das organizações, reduzir o desperdício de itens reutilizáveis e tornar o processo de doação mais simples, transparente e acessível. Recursos de acompanhamento, histórico, avaliação e reporte de irregularidades apoiarão a confiança entre os participantes.
 
 ### Processo 1 – Registro e divulgação de necessidades
 
-O donatário realiza seu cadastro, autentica-se e registra os itens de que necessita, incluindo informações como descrição, categoria, quantidade, prioridade e recorrência. A necessidade passa a ser exibida na plataforma para que doadores possam encontrá-la por pesquisa, filtros de categoria e localização ou marcadores no mapa. O responsável pode editar ou cancelar a publicação e acompanhar sua situação.
+O donatário abre o aplicativo, realiza seu cadastro, autentica-se e registra os itens de que necessita, incluindo informações como descrição, categoria, quantidade, prioridade e recorrência. Quando a localização for necessária, o aplicativo deverá solicitar a autorização do usuário. A necessidade passa a ser exibida para que doadores possam encontrá-la por pesquisa, filtros de categoria e localização ou marcadores no mapa. O responsável pode editar ou cancelar a publicação e acompanhar sua situação pelo celular.
 
 Esse fluxo centraliza as demandas e melhora sua visibilidade. O repositório de origem apresenta um fluxo de navegação da interface, mas não fornece um diagrama formal em BPMN para este processo.
 
 ### Processo 2 – Localização e realização da doação
 
-O doador realiza seu cadastro e acessa as solicitações, campanhas, ofertas ou instituições disponíveis. Após pesquisar ou filtrar os resultados, consulta os detalhes e entra em contato com o donatário por chat ou mensagem para combinar disponibilidade, retirada ou entrega. Ao final, a doação pode ser confirmada, registrada no histórico e avaliada pelos participantes.
+O doador acessa o aplicativo e consulta as solicitações, campanhas, ofertas ou instituições disponíveis. Após autorizar o uso da localização, quando desejar, poderá pesquisar, aplicar filtros e visualizar opções próximas no mapa. Em seguida, consulta os detalhes e entra em contato com o donatário por chat ou mensagem para combinar disponibilidade, retirada ou entrega. Ao final, a doação pode ser confirmada, acompanhada pelo status, registrada no histórico e avaliada pelos participantes.
 
 Esse fluxo reduz a busca manual por instituições, facilita o contato entre as partes e mantém um registro das doações. O repositório de origem não fornece um diagrama formal em BPMN para este processo.
 
 ## Indicadores de Desempenho
 
-O repositório de origem não contém medições históricas. Os indicadores abaixo são propostos para uma futura versão com persistência centralizada:
+O repositório de origem não contém medições históricas. Os indicadores abaixo são propostos para uma futura versão móvel com persistência centralizada:
 
 | Indicador | Cálculo | Finalidade |
 |-----------|---------|------------|
@@ -67,7 +67,7 @@ O repositório de origem não contém medições históricas. Os indicadores aba
 | Conversão de busca em contato | Contatos iniciados ÷ buscas realizadas × 100 | Avaliar a relevância dos filtros e resultados |
 | Satisfação dos participantes | Média das notas de feedback | Acompanhar a percepção sobre a experiência |
 
-Esses indicadores dependem de registros de datas, quantidades, estados, buscas, contatos e avaliações. O protótipo atual ainda não possui backend capaz de consolidar essas informações.
+Esses indicadores dependem de registros de datas, quantidades, estados, buscas, contatos e avaliações. A futura implementação móvel precisará de um serviço de persistência capaz de sincronizar e consolidar essas informações entre os dispositivos.
 
 ## Requisitos
 
@@ -120,14 +120,14 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 | ID | Restrição |
 |----|-----------|
-| 01 | A solução está inserida no escopo de uma aplicação web front-end. |
-| 02 | A aplicação deve funcionar nos navegadores Google Chrome e Microsoft Edge. |
-| 03 | A publicação da aplicação é realizada por meio do GitHub Pages. |
+| 01 | A solução deverá ser desenvolvida como aplicativo móvel. |
+| 02 | O aplicativo deverá considerar Android e iOS nas versões suportadas pelo projeto. |
+| 03 | O acesso à localização dependerá de autorização explícita do usuário e da disponibilidade do recurso no dispositivo. |
 | 04 | O escopo principal está direcionado à doação de itens físicos, e não à intermediação de pagamentos. |
 
 ## Diagrama de Casos de Uso
 
-Os casos de uso abaixo são derivados das histórias e dos requisitos consolidados.
+Os casos de uso abaixo são derivados das histórias e dos requisitos consolidados e representam as principais interações pelo aplicativo móvel.
 
 ```mermaid
 flowchart LR
@@ -140,7 +140,7 @@ flowchart LR
     UC3((Registrar oferta))
     UC4((Registrar necessidade ou campanha))
     UC5((Pesquisar e filtrar))
-    UC6((Consultar mapa e detalhes))
+    UC6((Autorizar localização e consultar mapa))
     UC7((Conversar por chat))
     UC8((Confirmar e acompanhar doação))
     UC9((Consultar histórico))
@@ -184,7 +184,7 @@ Os requisitos não funcionais são transversais e se aplicam às interfaces e fl
 
 # Gerenciamento de Projeto
 
-O projeto utiliza Scrum como base para organizar o desenvolvimento. O código e os documentos são versionados no GitHub, as tarefas são acompanhadas no GitHub Projects e os protótipos de interface são elaborados no Figma.
+O projeto utiliza Scrum como base para organizar o desenvolvimento. O código e os documentos são versionados no GitHub, as tarefas são acompanhadas no GitHub Projects e os protótipos das telas móveis são elaborados no Figma.
 
 ## Gerenciamento de Tempo
 
@@ -210,4 +210,4 @@ Os papéis informados na documentação de origem são:
 
 ## Gestão de Orçamento
 
-O repositório de origem não informa orçamento, custos de equipe ou despesas de infraestrutura. A versão atual utiliza ferramentas com acesso gratuito para o escopo acadêmico — GitHub, GitHub Pages e Figma — e não há valor financeiro documentado para registrar.
+O repositório de origem não informa orçamento, custos de equipe, serviços de backend ou despesas de distribuição do aplicativo. O planejamento utiliza ferramentas com acesso gratuito para o escopo acadêmico, como GitHub e Figma, mas não há valor financeiro documentado para registrar.
