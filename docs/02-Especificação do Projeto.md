@@ -2,11 +2,11 @@
 
 <span style="color:red">Pré-requisitos: <a href="01-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Esta especificação apresenta os perfis atendidos pelo Bem Próximo, as histórias de usuário, os processos de doação, os requisitos funcionais e não funcionais e as restrições conhecidas. O documento organiza as informações necessárias para compreender como o aplicativo móvel deverá apoiar doadores e donatários durante a divulgação, a busca e a realização de doações. A modelagem dos processos apresenta os principais fluxos de uso, enquanto as tabelas registram os requisitos que orientam a implementação. As informações foram organizadas a partir da documentação de contexto, da especificação, dos fluxos de interface e da metodologia do projeto. Dessa forma, o material serve como referência para o planejamento, o desenvolvimento e a validação do escopo do projeto.
+Esta especificação reúne os perfis atendidos pelo Bem Próximo, as histórias de usuário, os processos de doação, os requisitos e as restrições conhecidas. A modelagem apresenta os principais fluxos do aplicativo móvel, enquanto as tabelas registram as funcionalidades e condições de qualidade esperadas. O documento serve como referência para o planejamento, o desenvolvimento e a validação do escopo do projeto.
 
 ## Personas
 
-O projeto de origem define quatro perfis de usuários que representam pessoas físicas, empresas, organizações sociais e pessoas que necessitam de doações. Esses perfis ajudam a identificar quem poderá publicar, oferecer, buscar ou receber itens por meio do aplicativo. As necessidades de cada grupo orientam as funcionalidades de cadastro, publicação, pesquisa, contato e acompanhamento das doações. Como não foram fornecidos nomes, idades ou dados comportamentais individuais, os perfis são mantidos sem a criação de características fictícias. A tabela a seguir apresenta somente as informações que foram documentadas para cada tipo de participante.
+O projeto define quatro perfis de usuários: pessoas físicas, empresas, organizações sociais e pessoas que necessitam de doações. Esses grupos orientam as funcionalidades de cadastro, publicação, busca, contato e acompanhamento no aplicativo. Como não foram fornecidos dados individuais, os perfis são apresentados apenas com as informações documentadas, sem características fictícias.
 
 | Perfil | Descrição | Necessidades |
 |--------|-----------|-------------|
@@ -32,15 +32,15 @@ O projeto de origem define quatro perfis de usuários que representam pessoas f�
 
 ### Análise da Situação Atual
 
-As informações sobre necessidades e doações estão dispersas em redes sociais, páginas e grupos de mensagens. Esse cenário exige que o doador pesquise diferentes fontes para descobrir instituições, campanhas e pessoas que precisam de itens. Ao mesmo tempo, organizações e donatários possuem alcance limitado para divulgar demandas atualizadas para a comunidade. A fragmentação reduz a visibilidade das campanhas, torna mais demorado o contato entre as partes e dificulta a comparação entre oferta e necessidade. Sem um ponto central de consulta, itens que poderiam ser destinados a quem precisa podem permanecer parados ou não chegar ao público adequado.
+As informações sobre necessidades e doações estão dispersas em redes sociais, páginas e grupos de mensagens. Isso dificulta a localização de instituições, reduz o alcance das campanhas e torna mais lento o contato entre doadores e donatários. Sem um ponto central de consulta, itens disponíveis podem não chegar às pessoas ou organizações que precisam deles.
 
 ### Descrição Geral da Proposta
 
-O Bem Próximo será um aplicativo móvel para Android e iOS que conectará doadores e donatários em um único ambiente. Pelo aplicativo, os donatários poderão divulgar necessidades, campanhas e solicitações de itens, enquanto os doadores poderão registrar ofertas e localizar oportunidades compatíveis. A consulta poderá utilizar pesquisa, filtros, ordenação e visualização em mapa para facilitar a identificação de opções relevantes. Após encontrar uma oportunidade, os participantes poderão consultar os detalhes e entrar em contato para combinar a realização da doação. O acesso à localização dependerá da autorização do usuário, preservando o controle sobre os dados do aparelho.
+O Bem Próximo será um aplicativo móvel para Android e iOS que conecta doadores e donatários. Pelo aplicativo, será possível divulgar necessidades e ofertas, localizar oportunidades por pesquisa, filtros ou mapa e entrar em contato com os responsáveis. O uso da localização dependerá da autorização do usuário.
 
 ### Processo 1 – Registro e divulgação de necessidades
 
-No primeiro processo, o donatário entra no aplicativo ou realiza seu cadastro para acessar as funcionalidades disponíveis. Em seguida, registra uma necessidade com as informações necessárias para que a solicitação possa ser compreendida por potenciais doadores. O usuário pode decidir se deseja informar sua localização, pois esse dado depende de autorização explícita no dispositivo móvel. Depois do preenchimento, a necessidade é publicada para aparecer nas consultas realizadas pelo aplicativo. O responsável acompanha a situação da solicitação e pode editá-la ou cancelá-la quando as informações deixarem de ser válidas.
+No primeiro processo, o donatário acessa o aplicativo e registra uma necessidade com as informações necessárias para a publicação. A localização é opcional e depende de autorização no dispositivo móvel. Depois de publicar, o responsável pode acompanhar, editar ou cancelar a solicitação.
 
 ```mermaid
 %%{init: {"flowchart": {"curve": "linear"}} }%%
@@ -57,7 +57,7 @@ flowchart LR
 
 ### Processo 2 – Localização e realização da doação
 
-No segundo processo, o doador acessa o aplicativo para consultar solicitações, campanhas, ofertas ou instituições disponíveis. A busca pode ser refinada por pesquisa, filtros, ordenação e, quando houver autorização, pela visualização de opções no mapa. Após selecionar uma oportunidade, o usuário consulta os detalhes para verificar se a doação atende à necessidade apresentada. Em seguida, doador e donatário podem entrar em contato para combinar disponibilidade, retirada ou entrega dos itens. Ao final, a doação é confirmada, registrada no histórico e pode receber uma avaliação dos participantes.
+No segundo processo, o doador consulta oportunidades por pesquisa, filtros ou mapa e verifica os detalhes da opção escolhida. Em seguida, entra em contato com o donatário para combinar a retirada ou entrega dos itens. Ao final, a doação é confirmada, registrada no histórico e pode ser avaliada pelos participantes.
 
 ```mermaid
 %%{init: {"flowchart": {"curve": "linear"}} }%%
@@ -73,7 +73,7 @@ flowchart LR
 
 ## Indicadores de Desempenho
 
-O repositório de origem não contém medições históricas sobre publicações, contatos ou doações concluídas. Por esse motivo, os indicadores abaixo são propostos para uma futura versão móvel com persistência centralizada. Eles permitem acompanhar se as necessidades estão sendo atendidas, se os usuários encontram oportunidades relevantes e se o contato entre as partes ocorre com agilidade. As métricas também ajudam a identificar o volume de itens destinados e a percepção dos participantes sobre a experiência. A coleta desses dados poderá apoiar decisões de melhoria e a avaliação do impacto social do aplicativo.
+O repositório de origem não contém medições históricas sobre publicações, contatos ou doações concluídas. Os indicadores abaixo são propostos para uma futura versão móvel com persistência centralizada. Eles ajudam a acompanhar o atendimento das necessidades, o volume de itens destinados e a percepção dos participantes.
 
 | Indicador | Cálculo | Finalidade |
 |-----------|---------|------------|
@@ -84,7 +84,7 @@ O repositório de origem não contém medições históricas sobre publicações
 | Conversão de busca em contato | Contatos iniciados ÷ buscas realizadas × 100 | Avaliar a relevância dos filtros e resultados |
 | Satisfação dos participantes | Média das notas de feedback | Acompanhar a percepção sobre a experiência |
 
-Esses indicadores dependem de registros de datas, quantidades, estados, buscas, contatos e avaliações realizados pelos usuários. A futura implementação móvel precisará de um serviço de persistência capaz de sincronizar e consolidar essas informações entre os dispositivos. Os dados devem ser armazenados de forma consistente para que o cálculo dos indicadores represente corretamente a situação das solicitações e das doações. As informações reunidas poderão ser apresentadas em relatórios ou painéis de acompanhamento do projeto. Dessa maneira, a equipe terá uma base objetiva para avaliar resultados e priorizar melhorias futuras.
+Os indicadores dependem de registros de datas, quantidades, estados, buscas, contatos e avaliações. A futura implementação móvel precisará de um serviço de persistência para sincronizar e consolidar essas informações. Os dados reunidos poderão apoiar relatórios, acompanhamento de resultados e futuras melhorias.
 
 ## Requisitos
 
@@ -133,7 +133,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ## Restrições
 
-O projeto está restrito pelos itens apresentados na tabela a seguir. Essas restrições definem limites para as decisões de tecnologia, interface e escopo funcional do Bem Próximo. A solução deve ser planejada como aplicativo móvel e considerar os sistemas operacionais indicados para o projeto. Além disso, o uso de localização depende do consentimento do usuário e da disponibilidade do recurso no dispositivo. O foco permanece na intermediação de doações de itens físicos, sem incluir pagamentos como parte do escopo principal.
+O projeto está restrito pelos itens apresentados na tabela a seguir. Esses limites orientam as decisões de tecnologia, interface e escopo funcional do Bem Próximo. A solução é voltada a aplicativos móveis e à intermediação de doações de itens físicos, sem incluir pagamentos.
 
 | ID | Restrição |
 |----|-----------|
@@ -144,7 +144,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir. Essas rest
 
 ## Diagrama de Casos de Uso
 
-O diagrama apresenta uma visão resumida das principais funcionalidades do aplicativo e organiza a interação do usuário em uma sequência simples. Ele inicia pelo acesso à conta, passa pela publicação e consulta de oportunidades e segue até o contato, a confirmação da doação e o registro de avaliações ou reportes. A representação foi mantida compacta para facilitar a leitura no documento e no repositório. As funcionalidades associadas à localização estão incluídas na consulta de oportunidades, pois são utilizadas de forma opcional. O detalhamento por tipo de usuário e requisito permanece na tabela de cobertura abaixo.
+O diagrama apresenta uma visão resumida das principais funcionalidades do aplicativo. Ele abrange o acesso à conta, a publicação e consulta de oportunidades, o contato entre usuários, a confirmação da doação e os registros de avaliação ou reporte. O detalhamento por tipo de usuário e requisito permanece na tabela de cobertura abaixo.
 
 ```mermaid
 %%{init: {"flowchart": {"curve": "linear", "nodeSpacing": 80, "rankSpacing": 100, "padding": 20}, "themeVariables": {"fontSize": "18px"}} }%%
@@ -179,11 +179,11 @@ flowchart LR
 | RF-16 | Reportar irregularidade | Usuário |
 | RF-17 | Avaliar doação ou instituição | Usuário |
 
-A tabela detalha os casos resumidos no diagrama e mantém a correspondência com cada requisito funcional. Ela indica qual caso de uso atende cada requisito e qual ator é o principal responsável pela interação. A autorização de localização é solicitada quando o usuário opta por utilizar o mapa e a proximidade, conforme as condições de privacidade definidas para o aplicativo. Os demais requisitos não funcionais são condições de qualidade transversais que devem ser observadas em todas as telas e operações. Dessa forma, o diagrama continua simples, enquanto a tabela preserva a rastreabilidade necessária para o projeto.
+A tabela detalha os casos resumidos no diagrama e mantém a correspondência com cada requisito funcional. A autorização de localização é solicitada quando o usuário opta por utilizar o mapa e a proximidade. Os requisitos não funcionais são condições de qualidade transversais aplicáveis a todas as telas e operações.
 
 # Matriz de Rastreabilidade
 
-As histórias são identificadas pela ordem em que aparecem na tabela de Histórias de Usuário, sem alterar seu conteúdo original. A matriz relaciona cada história aos requisitos funcionais que contribuem para atender a necessidade apresentada pelo respectivo perfil. Essa relação facilita a conferência entre o que os usuários esperam do aplicativo e as funcionalidades registradas na especificação. Ela também pode ser utilizada durante o desenvolvimento para verificar se cada história possui cobertura suficiente nos requisitos. Os requisitos não funcionais são tratados como condições que se aplicam de forma geral a todas essas funcionalidades.
+As histórias são identificadas pela ordem em que aparecem na tabela de Histórias de Usuário, sem alterar seu conteúdo original. A matriz relaciona cada história aos requisitos funcionais que ajudam a atender a necessidade do respectivo perfil. Ela facilita a conferência entre as expectativas dos usuários e as funcionalidades registradas na especificação.
 
 | História | Síntese | Requisitos relacionados |
 |----------|---------|-------------------------|
@@ -196,27 +196,27 @@ As histórias são identificadas pela ordem em que aparecem na tabela de Histór
 | HU-07 | Acompanhamento e histórico | RF-14 e RF-15 |
 | HU-08 | Reporte de irregularidades | RF-16 |
 
-Os requisitos não funcionais são transversais e se aplicam às interfaces e aos fluxos correspondentes. Eles definem condições de qualidade relacionadas à usabilidade, segurança, privacidade, desempenho, acessibilidade e manutenção do aplicativo. Diferentemente dos requisitos funcionais, esses itens não representam uma ação isolada do usuário, mas características que devem estar presentes em toda a solução. Por exemplo, a autorização para uso da localização e a proteção das credenciais devem ser consideradas nos recursos que utilizam esses dados. Assim, a implementação precisa observar esses requisitos durante todas as etapas de desenvolvimento e teste.
+Os requisitos não funcionais são transversais e se aplicam às interfaces e aos fluxos correspondentes. Eles tratam de qualidade, usabilidade, segurança, privacidade, desempenho, acessibilidade e manutenção do aplicativo. Essas condições devem ser consideradas durante o desenvolvimento e os testes da solução.
 
 
 # Gerenciamento de Projeto
 
-O projeto utiliza Scrum como base para organizar o desenvolvimento e acompanhar a evolução das entregas. Essa abordagem permite dividir o trabalho em ciclos curtos, revisar prioridades e registrar o andamento das tarefas de forma transparente. O código e os documentos são versionados no GitHub, facilitando o histórico de alterações e a colaboração entre os integrantes. As tarefas são acompanhadas no GitHub Projects, enquanto os protótipos das telas móveis são elaborados no Figma. O uso conjunto dessas ferramentas apoia a comunicação da equipe e a organização dos materiais do projeto.
+O projeto utiliza Scrum como base para organizar o desenvolvimento e acompanhar as entregas. O código e os documentos são versionados no GitHub, as tarefas são acompanhadas no GitHub Projects e os protótipos das telas móveis são elaborados no Figma. Essas ferramentas apoiam a colaboração e a organização dos materiais do projeto.
 
 ## Gerenciamento de Tempo
 
-O trabalho é organizado em sprints semanais para que a equipe possa definir prioridades e acompanhar entregas em períodos curtos. As atividades são registradas no GitHub Projects e percorrem um quadro Kanban que torna visível a situação de cada tarefa. Antes de iniciar uma sprint, as demandas mais relevantes são selecionadas a partir do backlog e organizadas para execução. Durante a semana, os integrantes atualizam o andamento das tarefas conforme o trabalho avança. Ao final do ciclo, as entregas concluídas podem ser revisadas e novas necessidades podem ser incluídas no planejamento.
+O trabalho é organizado em sprints semanais para definir prioridades e acompanhar entregas em períodos curtos. As atividades são registradas no GitHub Projects e percorrem um quadro Kanban. Ao final de cada ciclo, as entregas podem ser revisadas e novas necessidades incluídas no planejamento.
 
 - **Backlog:** reúne o Product Backlog e novas atividades identificadas durante o projeto;
 - **To Do:** representa o Sprint Backlog da semana;
 - **Doing:** contém as tarefas em desenvolvimento;
 - **Done:** reúne as tarefas testadas, revisadas e prontas para entrega.
 
-As tarefas também são classificadas pelas categorias Bug, Desenvolvimento, Documentação, Gerência de Projetos, Infraestrutura e Testes. Essa classificação facilita a identificação do tipo de trabalho necessário e ajuda a distribuir as atividades entre os integrantes. Itens de desenvolvimento representam funcionalidades e melhorias do aplicativo, enquanto itens de testes apoiam a validação do comportamento esperado. As tarefas de documentação e gerência mantêm os registros do projeto atualizados e organizados. Já as categorias de bug e infraestrutura permitem acompanhar correções e necessidades relacionadas ao ambiente técnico.
+As tarefas também são classificadas pelas categorias Bug, Desenvolvimento, Documentação, Gerência de Projetos, Infraestrutura e Testes. A classificação facilita a distribuição das atividades e a identificação do tipo de trabalho necessário. Itens de desenvolvimento, testes, documentação e infraestrutura podem ser acompanhados separadamente no quadro.
 
 ## Gerenciamento de Equipe
 
-Os integrantes e papéis informados para o projeto são apresentados na tabela a seguir. Anna Rodrigues e Helena Bretas atuam como Scrum Masters, apoiando a organização do trabalho e o acompanhamento das atividades da equipe. Os membros de desenvolvimento participam da construção e evolução das funcionalidades previstas para o aplicativo. A equipe de design contribui para a definição e o aperfeiçoamento das telas e da experiência de uso em dispositivos móveis. A mesma composição foi informada para as equipes de desenvolvimento e design, permitindo colaboração entre as atividades técnicas e de interface.
+Os integrantes e papéis informados para o projeto são apresentados na tabela a seguir. Anna Rodrigues e Helena Bretas atuam como Scrum Masters, apoiando a organização das atividades. A mesma composição foi informada para as equipes de desenvolvimento e design, permitindo colaboração entre as atividades técnicas e de interface.
 
 | Papel | Responsáveis |
 |-------|--------------|
@@ -226,4 +226,4 @@ Os integrantes e papéis informados para o projeto são apresentados na tabela a
 
 ## Gestão de Orçamento
 
-O repositório de origem não informa orçamento, custos de equipe, serviços de backend ou despesas de distribuição do aplicativo. Por isso, não há valores financeiros documentados para registrar nesta especificação. O planejamento utiliza ferramentas com acesso gratuito adequadas ao escopo acadêmico, como GitHub para versionamento e Figma para elaboração de protótipos. Caso o projeto evolua para uma versão publicada, será necessário estimar custos de infraestrutura, serviços externos, manutenção e distribuição nas lojas de aplicativos. Até que essas definições sejam fornecidas, a gestão de orçamento permanece limitada às informações disponíveis no repositório.
+O repositório de origem não informa orçamento, custos de equipe, serviços de backend ou despesas de distribuição do aplicativo. O planejamento utiliza ferramentas gratuitas para o escopo acadêmico, como GitHub e Figma. Caso o projeto evolua para uma versão publicada, será necessário estimar custos de infraestrutura, manutenção e distribuição.
