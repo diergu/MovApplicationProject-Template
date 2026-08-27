@@ -2,27 +2,44 @@
 
 `Análise e Desenvolvimento de Sistemas`
 
-`Projeto: Desenvolvimento de Aplicação Web Front-End — Turma 11`
+`Projeto: Desenvolvimento de Aplicações Móveis — Turma 4 - Grupo 4`
 
-`2025/2 — Eixo 1`
+`2026/2 — Eixo 3`
 
-O Bem Próximo é uma aplicação web destinada a facilitar a conexão entre doadores e organizações sociais. Instituições podem divulgar seus dados e necessidades, enquanto doadores encontram informações sobre itens solicitados e locais de doação.
+O Bem Próximo é uma aplicação mobile desenvolvida para aproximar doadores de organizações sociais que necessitam de alimentos, roupas, produtos de higiene, materiais escolares e outros itens essenciais.
 
-A plataforma busca ampliar a visibilidade das organizações, incentivar a participação comunitária e reduzir o desperdício de itens reutilizáveis. A proposta oferece um ambiente simples e acessível para aproximar diretamente quem deseja doar de quem precisa.
+Por meio da plataforma, as instituições poderão divulgar suas informações e necessidades, enquanto os usuários poderão localizar organizações, consultar os itens solicitados e encontrar orientações sobre como e onde realizar suas doações.
+
+A proposta busca ampliar a visibilidade das organizações sociais, incentivar a participação comunitária e contribuir para o reaproveitamento de itens que ainda podem ser utilizados.
 
 ## Integrantes
 
-- Elizabeth França Vaz dos Santos
-- Geovana Vitória Andrade Silva
-- Gildney Chaves Neto
+- Anna Flávia Nunes Rodrigues
+- Arthur Moreira Vieira
+- Diego Alencar Chaves
 - Helena Bretas
-- Johnata de Souza do Amparo
+- Rodrigo Duarte Galvão de Ireno
+- Vitor de Barros Rigueira Fernandes
 
 ## Orientador
 
-- Humberto Azevedo Nigri do Carmo
+- Diego Roberto Gonçalves de Pontes
 
-## Instruções de utilização
+## Objetivo
+
+Desenvolver uma aplicação mobile, acessível e intuitiva que facilite a conexão entre pessoas interessadas em doar e organizações que precisam receber doações.
+
+Nesta etapa acadêmica, os dados da aplicação serão disponibilizados por meio de uma API simulada (Fake API), permitindo o desenvolvimento e a validação das funcionalidades do aplicativo sem a necessidade inicial de um backend definitivo.
+
+## Tecnologias
+
+- React Native — desenvolvimento da aplicação mobile
+- JavaScript ou TypeScript — linguagem de desenvolvimento
+- Fake API — simulação do fornecimento e da persistência de dados
+- Git e GitHub — versionamento e colaboração entre os integrantes
+- Docker — padronização do ambiente e execução dos serviços do projeto
+
+## Instruções de utilização*
 
 O projeto é uma aplicação estática desenvolvida com HTML, CSS e JavaScript. Consulte as instruções de execução em [src/README.md](src/README.md).
 
