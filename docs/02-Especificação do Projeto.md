@@ -17,16 +17,29 @@ O projeto define quatro perfis de usuários: pessoas físicas, empresas, organiz
 
 ## Histórias de Usuários
 
-| EU COMO... `PERSONA` | QUERO/PRECISO... `FUNCIONALIDADE` | PARA... `MOTIVO/VALOR` |
-|----------------------|-----------------------------------|------------------------|
-| Donatário — instituição religiosa (CNPJ) | Criar uma campanha de arrecadação de agasalhos, informando quais itens são necessários, quantidades, tamanhos aceitos, prazo da campanha e local ou forma de entrega. | Divulgar uma necessidade específica à comunidade, acompanhar o que já foi arrecadado e evitar receber itens em excesso ou que não atendam à campanha. |
-| Donatário — ONG (CNPJ) | Cadastrar uma lista atualizada de itens necessários, indicando prioridade, quantidade e se a necessidade é pontual ou recorrente. | Permitir que potenciais doadores saibam exatamente do que a instituição precisa naquele momento e direcionem suas doações de forma mais eficiente. |
-| Donatário — ONG ou instituição religiosa (CNPJ) | Disponibilizar para outras instituições itens recebidos em quantidade superior à minha necessidade. | Evitar que doações fiquem paradas ou sejam desperdiçadas e permitir que outra instituição que esteja precisando desses itens possa utilizá-los. |
-| Doador (CPF) | Informar quais itens tenho disponíveis para doação e encontrar instituições próximas que estejam precisando especificamente desses itens. | Destinar objetos em bom estado para quem realmente necessita, sem precisar procurar individualmente instituições e entrar em contato com cada uma delas. |
-| Doador (CNPJ) | Cadastrar lotes de produtos excedentes ou próximos da retirada de estoque e identificar instituições interessadas em recebê-los. | Evitar desperdício, liberar espaço de armazenamento e direcionar produtos utilizáveis para organizações que possam aproveitá-los. |
-| Doador ou donatário | Poder entrar em contato com a outra parte interessada na doação. | Combinar informações necessárias para sua realização, como disponibilidade, retirada e entrega dos itens. |
-| Doador ou donatário | Acompanhar minhas doações e solicitações e consultar as que já foram concluídas. | Saber a situação das negociações atuais e manter um registro das doações que realizei ou recebi. |
-| Usuário do aplicativo | Reportar uma solicitação ou oferta que considere suspeita, inadequada ou irregular. | Contribuir para que conteúdos incompatíveis com a finalidade da plataforma sejam identificados e analisados. |
+## Histórias de Usuário
+
+| EU COMO... `PERSONA` | QUERO/PRECISO ... `FUNCIONALIDADE` | PARA ... `MOTIVO/VALOR` |
+|----------------------|-------------------------------------|-------------------------|
+| **HU-01 — Donatário — instituição religiosa (CNPJ)** | Criar uma campanha de arrecadação de agasalhos, informando quais itens são necessários, quantidades, tamanhos aceitos, prazo da campanha e local ou forma de entrega. | Divulgar uma necessidade específica à comunidade, acompanhar o que já foi arrecadado e evitar receber itens em excesso ou que não atendam à campanha. |
+| **HU-02 — Donatário — ONG (CNPJ)** | Cadastrar uma lista atualizada de itens necessários, indicando prioridade, quantidade e se a necessidade é pontual ou recorrente. | Permitir que potenciais doadores saibam exatamente do que a instituição precisa naquele momento e direcionem suas doações de forma mais eficiente. |
+| **HU-03 — Donatário — ONG ou instituição religiosa (CNPJ)** | Disponibilizar para outras instituições itens recebidos em quantidade superior à minha necessidade. | Evitar que doações fiquem paradas ou sejam desperdiçadas e permitir que outra instituição que esteja precisando desses itens possa utilizá-los. |
+| **HU-04 — Doador (CPF)** | Informar quais itens tenho disponíveis para doação e encontrar instituições próximas que estejam precisando especificamente desses itens. | Destinar objetos em bom estado para quem realmente necessita, sem precisar procurar individualmente instituições e entrar em contato com cada uma delas. |
+| **HU-05 — Doador (CNPJ)** | Cadastrar lotes de produtos excedentes ou próximos da retirada de estoque e identificar instituições interessadas em recebê-los. | Evitar desperdício, liberar espaço de armazenamento e direcionar produtos utilizáveis para organizações que possam aproveitá-los. |
+| **HU-06 — Doador ou donatário** | Poder entrar em contato com a outra parte interessada na doação. | Combinar informações necessárias para sua realização, como disponibilidade, retirada e entrega dos itens. |
+| **HU-07 — Doador ou donatário** | Acompanhar minhas doações e solicitações e consultar as que já foram concluídas. | Saber a situação das negociações atuais e manter um registro das doações que realizei ou recebi. |
+| **HU-08 — Usuário do aplicativo** | Reportar uma solicitação ou oferta que considere suspeita, inadequada ou irregular. | Contribuir para que conteúdos incompatíveis com a finalidade da plataforma sejam identificados e analisados. |
+| **HU-09 — Usuário do Bem Próximo** | Criar minha conta de acordo com meu perfil, acessar o aplicativo de forma segura e gerenciar meus dados pessoais. | Utilizar as funcionalidades da plataforma mantendo minhas informações atualizadas e protegidas. |
+| **HU-10 — Doador ou donatário** | Publicar e gerenciar necessidades, itens disponíveis e campanhas de arrecadação. | Permitir que recursos disponíveis sejam direcionados às pessoas e instituições que realmente precisam deles. |
+| **HU-11 — Usuário interessado em doar ou receber doações** | Visualizar necessidades, ofertas, campanhas e instituições e pesquisá-las utilizando filtros, localização e mapa. | Encontrar de maneira rápida aquilo que é mais relevante e próximo de mim. |
+| **HU-12 — Doador ou donatário** | Comunicar-me diretamente com a outra parte envolvida em uma possível doação. | Combinar disponibilidade, quantidade, retirada, entrega e outras informações necessárias para a realização da doação. |
+| **HU-13 — Doador ou donatário** | Acompanhar minhas negociações e doações, confirmar quando uma doação for realizada e consultar meu histórico. | Saber a situação de cada processo e manter um registro das doações realizadas ou recebidas. |
+| **HU-14 — Usuário do Bem Próximo** | Reportar conteúdos ou comportamentos inadequados e avaliar experiências de doação e instituições. | Contribuir para uma comunidade mais segura, transparente e confiável. |
+| **HU-15 — Usuário do Bem Próximo** | Confirmar minha conta por e-mail e acessar o aplicativo utilizando e-mail e senha. | Garantir que somente usuários autenticados possam acessar suas contas e utilizar as funcionalidades vinculadas ao seu perfil. |
+| **HU-16 — Doador ou donatário responsável por uma publicação** | Editar ou cancelar solicitações, ofertas e campanhas que eu tenha criado. | Manter as informações publicadas atualizadas e retirar conteúdos que não sejam mais válidos ou necessários. |
+| **HU-17 — Usuário do Bem Próximo** | Consultar os detalhes de uma solicitação, oferta ou campanha, incluindo informações sobre o item, quantidade, responsável, localização e situação atual. | Avaliar se aquela oportunidade de doação atende ao que procuro antes de entrar em contato ou iniciar uma negociação. |
+| **HU-18 — Usuário interessado em doar ou receber doações** | Pesquisar, filtrar e ordenar solicitações e ofertas por palavra-chave, categoria, localização, prioridade e proximidade. | Encontrar com mais rapidez as oportunidades de doação mais relevantes para minha necessidade ou disponibilidade. |
+
 
 ## Modelagem do Processo de Negócio 
 
