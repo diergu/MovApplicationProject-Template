@@ -220,6 +220,39 @@ O projeto utiliza Scrum como base para organizar o desenvolvimento e acompanhar 
 
 O trabalho é organizado em sprints semanais para definir prioridades e acompanhar entregas em períodos curtos. As atividades são registradas no GitHub Projects e percorrem um quadro Kanban. Ao final de cada ciclo, as entregas podem ser revisadas e novas necessidades incluídas no planejamento.
 
+Além do acompanhamento semanal, o planejamento foi estruturado como uma rede de precedências. As durações abaixo são estimadas em dias úteis e representam o esforço de cada etapa, sem considerar atividades em paralelo.
+
+| Atividade | Descrição | Duração estimada | Predecessora(s) |
+|---|---|---:|---|
+| A | Planejamento e organização do backlog | 5 dias | — |
+| B | Levantamento de requisitos | 7 dias | A |
+| C | Protótipo e validação da interface | 10 dias | B |
+| D | Definição da arquitetura e ambiente | 7 dias | B |
+| E | Desenvolvimento das funcionalidades | 20 dias | C e D |
+| F | Elaboração da documentação técnica | 15 dias | B |
+| G | Integração e revisão das funcionalidades | 7 dias | E |
+| H | Testes e correção de defeitos | 10 dias | G |
+| I | Entrega e apresentação do projeto | 3 dias | F e H |
+
+```mermaid
+flowchart LR
+    A["A · Planejamento<br/>5 dias"] --> B["B · Requisitos<br/>7 dias"]
+    B --> C["C · Protótipo<br/>10 dias"]
+    B --> D["D · Arquitetura<br/>7 dias"]
+    B --> F["F · Documentação<br/>15 dias"]
+    C --> E["E · Desenvolvimento<br/>20 dias"]
+    D --> E
+    E --> G["G · Integração<br/>7 dias"]
+    G --> H["H · Testes e correções<br/>10 dias"]
+    H --> I["I · Entrega<br/>3 dias"]
+    F --> I
+
+    classDef critical fill:#FDE2E2,stroke:#B42318,color:#55110B,stroke-width:2px;
+    class A,B,C,E,G,H,I critical;
+```
+
+O caminho crítico é **A → B → C → E → G → H → I**, com duração prevista de **62 dias úteis**. Essas atividades determinam a duração mínima do projeto: qualquer atraso nelas adia a entrega. A atividade D possui até 3 dias úteis de folga em relação ao início do desenvolvimento; a documentação (F) deve ser mantida atualizada para não se tornar uma restrição antes da entrega.
+
 - **Backlog:** reúne o Product Backlog e novas atividades identificadas durante o projeto;
 - **To Do:** representa o Sprint Backlog da semana;
 - **Doing:** contém as tarefas em desenvolvimento;
