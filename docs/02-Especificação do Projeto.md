@@ -234,6 +234,10 @@ Além do acompanhamento semanal, o planejamento foi estruturado como uma rede de
 | H | Testes e correção de defeitos | 10 dias | G |
 | I | Entrega e apresentação do projeto | 3 dias | F e H |
 
+O gráfico de Gantt apresenta a distribuição dessas atividades ao longo de 13 semanas. As barras em vermelho correspondem ao caminho crítico; as azuis representam atividades executadas em paralelo.
+
+![Gráfico de Gantt do projeto Bem Próximo](img/02-grafico-gantt-bem-proximo.svg)
+
 ```mermaid
 flowchart LR
     A["A · Planejamento<br/>5 dias"] --> B["B · Requisitos<br/>7 dias"]
